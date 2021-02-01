@@ -1,4 +1,4 @@
-package main.expansion;
+package expansion;
 
 public class Binary {
 }
