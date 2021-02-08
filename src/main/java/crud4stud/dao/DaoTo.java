@@ -13,7 +13,7 @@ public class DaoTo {
 
     private DaoTo() {
     }
-
+// Сам парсер форматов
     public static String toJSON(StorageOfPersons personStorage) {
 
         List<PersonCreate> personList = personStorage.getPersons();
