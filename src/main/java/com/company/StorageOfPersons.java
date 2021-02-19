@@ -1,24 +1,24 @@
 package com.company;
 
-import com.company.Persons.PersonCreate;
+import com.company.persons.Person;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StorageOfPersons {
 
-    private List<PersonCreate> persons;
+    private List<Person> persons;
 
-    public StorageOfPersons(List<PersonCreate> person) {
+    public StorageOfPersons(List<Person> person) {
 
         this.persons = new ArrayList<>(person);
     }
 
-    public List<PersonCreate> getPersons() {
+    public List<Person> getPersons() {
         return persons;
     }
 
-    public void setPersons(List<PersonCreate> persons) {
+    public void setPersons(List<Person> persons) {
 
         this.persons = persons;
     }

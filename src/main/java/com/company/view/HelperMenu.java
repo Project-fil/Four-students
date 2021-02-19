@@ -1,11 +1,11 @@
-package com.company.Dao;
+package com.company.view;
 
 import com.company.StorageOfPersons;
-import com.company.Utils.Helper;
+import com.company.utils.HelpersCommands;
 
-import static com.company.Dao.MenuAndDaoTo.safeForFile;
+import static com.company.view.MenuAndDaoTo.safeForFile;
 
-public class Helper123 {
+public class HelperMenu {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
     static StorageOfPersons personStorage;
@@ -16,36 +16,36 @@ public class Helper123 {
             case "1": {
                 System.out.println("Enter Id ");
                 Integer idHelpers = scanner.nextInt();
-                System.out.println(Helper.getById(idHelpers, personStorage));
+                System.out.println(HelpersCommands.getById(idHelpers, personStorage));
                 break;
             }
             case "2": {
                 System.out.println("Enter City ");
                 String cityHelpers = scanner.next();
-                System.out.println(Helper.getAllByCity(cityHelpers, personStorage));
+                System.out.println(HelpersCommands.getAllByCity(cityHelpers, personStorage));
                 break;
             }
             case "3": {
                 System.out.println("Enter Age ");
                 Integer ageHelpers = scanner.nextInt();
-                System.out.println(Helper.getAllByAge(ageHelpers, personStorage));
+                System.out.println(HelpersCommands.getAllByAge(ageHelpers, personStorage));
                 break;
             }
             case "4": {
                 System.out.println("Enter FirstName ");
                 String firstNameHelpers = scanner.next();
-                System.out.println(Helper.getAllByFirstName(firstNameHelpers, personStorage));
+                System.out.println(HelpersCommands.getAllByFirstName(firstNameHelpers, personStorage));
                 break;
             }
 
             case "5": {
                 System.out.println("Enter LastName ");
                 String secondHelpers = scanner.next();
-                System.out.println(Helper.getAllByLastName(secondHelpers, personStorage));
+                System.out.println(HelpersCommands.getAllByLastName(secondHelpers, personStorage));
                 break;
             }
             case "6": {
-                Helper.deleteAll(personStorage);
+                HelpersCommands.deleteAll(personStorage);
                 safeForFile(fileName);
                 break;
             }

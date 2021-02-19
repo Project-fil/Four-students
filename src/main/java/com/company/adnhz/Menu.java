@@ -1,7 +1,6 @@
 
-package com.company.AndRead;
+package com.company.adnhz;
 
-import java.io.*;
 import java.util.Scanner;
 
 

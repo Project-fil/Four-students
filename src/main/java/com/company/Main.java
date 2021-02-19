@@ -1,7 +1,7 @@
 package com.company;
 
 
-import com.company.Dao.MenuAndDaoTo;
+import com.company.view.MenuAndDaoTo;
 
 public class Main {
 

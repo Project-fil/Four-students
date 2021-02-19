@@ -1,8 +1,8 @@
-package com.company.Persons;
+package com.company.persons;
 
 import java.util.Objects;
 
-public class PersonCreate {
+public class Person {
 
     private String firstName;
     private String lastName;
@@ -10,7 +10,7 @@ public class PersonCreate {
     private String city;
     private Integer id;
 
-    public PersonCreate(Integer id, String firstName, String lastName, Integer age, String city) {
+    public Person(Integer id, String firstName, String lastName, Integer age, String city) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -63,7 +63,7 @@ public class PersonCreate {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PersonCreate person = (PersonCreate) o;
+        Person person = (Person) o;
         return Objects.equals(firstName, person.firstName) &&
                 Objects.equals(lastName, person.lastName) &&
                 Objects.equals(age, person.age) &&

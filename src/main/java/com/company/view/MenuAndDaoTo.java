@@ -1,8 +1,8 @@
-package com.company.Dao;
+package com.company.view;
 
-import com.company.Persons.NazvanieNePridumal;
+import com.company.persons.TransferToFormat;
 import com.company.StorageOfPersons;
-import com.company.Utils.FileUtil;
+import com.company.utils.FileUtil;
 
 import java.io.File;
 
@@ -33,7 +33,7 @@ public class MenuAndDaoTo {
                         else
                             System.out.println("File already exists");
                     }
-                    personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("js.json"));
+                    personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("js.json"));
 
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
@@ -45,7 +45,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 2 for ReadAll \nEnter 3 for Update " +
                                     "\nEnter 4 for Delete \n ");
                             String action = scanner.next();
-                            Crud.crudMenu(action, "js.json");
+                            Dialog.crudMenu(action, "js.json");
                         } else if (typeOfAction.equals("2")) {
                             System.out.print("Select action: \nEnter 1 for getById " +
                                     "\nEnter 2 for getAllByCity " +
@@ -54,7 +54,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 5 for getAllByLastName " +
                                     "\nEnter 6 for deleteAll \n ");
                             String action = scanner.next();
-                            Helper123.personAdd(action, personStorage,
+                            HelperMenu.personAdd(action, personStorage,
                                     getFileNameByTypeOfFile(typeOfFile));
                         }
                         System.out.println("Enter 1 for continue or 2 for exit");
@@ -75,7 +75,7 @@ public class MenuAndDaoTo {
                             System.out.println("File already exists");
                     }
 
-                    personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("xm.xml"));
+                    personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("xm.xml"));
 
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
@@ -87,7 +87,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 2 for ReadAll \nEnter 3 for Update " +
                                     "\nEnter 4 for Delete \n ");
                             String action = scanner.next();
-                            Crud.crudMenu(action, "xm.xml");
+                            Dialog.crudMenu(action, "xm.xml");
                         } else if (typeOfAction.equals("2")) {
                             System.out.print("Select action: \nEnter 1 for getById " +
                                     "\nEnter 2 for getAllByCity " +
@@ -96,7 +96,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 5 for getAllByLastName " +
                                     "\nEnter 6 for deleteAll \n ");
                             String action = scanner.next();
-                            Helper123.personAdd(action, personStorage,
+                            HelperMenu.personAdd(action, personStorage,
                                     getFileNameByTypeOfFile(typeOfFile));
                         }
                         System.out.println("Enter 1 for continue or 2 for exit");
@@ -117,17 +117,17 @@ public class MenuAndDaoTo {
                             System.out.println("File already exists");
                     }
 
-                    personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("cv.csv"));
+                    personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("cv.csv"));
                     while (flag) {
 
-                            String typeOfAction = Crud.crudMessages("Select action: \nEnter 1 for CRUD " +
+                            String typeOfAction = Dialog.crudMessages("Select action: \nEnter 1 for CRUD " +
                                     "\nEnter 2 for HELPERS \n ");
                         if (typeOfAction.equals("1")) {
                             System.out.print("Select action: \nEnter 1 for Create " +
                                     "\nEnter 2 for ReadAll \nEnter 3 for Update " +
                                     "\nEnter 4 for Delete \n ");
                             String action = scanner.next();
-                            Crud.crudMenu(action, "cv.csv");
+                            Dialog.crudMenu(action, "cv.csv");
                         } else if (typeOfAction.equals("2")) {
                             System.out.print("Select action: \nEnter 1 for getById " +
                                     "\nEnter 2 for getAllByCity " +
@@ -136,7 +136,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 5 for getAllByLastName " +
                                     "\nEnter 6 for deleteAll \n ");
                             String action = scanner.next();
-                            Helper123.personAdd(action, personStorage,
+                            HelperMenu.personAdd(action, personStorage,
                                     getFileNameByTypeOfFile(typeOfFile));
                         }
                         System.out.println("Enter 1 for continue or 2 for exit");
@@ -157,7 +157,7 @@ public class MenuAndDaoTo {
                             System.out.println("File already exists");
                     }
 
-                    personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("ya.yaml"));
+                    personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("ya.yaml"));
 
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
@@ -169,7 +169,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 2 for ReadAll \nEnter 3 for Update " +
                                     "\nEnter 4 for Delete \n ");
                             String action = scanner.next();
-                            Crud.crudMenu(action, "ya.yaml");
+                            Dialog.crudMenu(action, "ya.yaml");
                         } else if (typeOfAction.equals("2")) {
                             System.out.print("Select action: \nEnter 1 for getById " +
                                     "\nEnter 2 for getAllByCity " +
@@ -178,7 +178,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 5 for getAllByLastName " +
                                     "\nEnter 6 for deleteAll \n ");
                             String action = scanner.next();
-                            Helper123.personAdd(action, personStorage,
+                            HelperMenu.personAdd(action, personStorage,
                                     getFileNameByTypeOfFile(typeOfFile));
                         }
                         System.out.println("Enter 1 for continue or 2 for exit");
@@ -217,16 +217,16 @@ public class MenuAndDaoTo {
 
     public static void safeForFile(String fileName) {
         if (fileName.endsWith(".json")) {
-            FileUtil.writeFile(new File("js.json"), false, NazvanieNePridumal.toJSON(personStorage));
+            FileUtil.writeFile(new File("js.json"), false, TransferToFormat.toJSON(personStorage));
 
         } else if (fileName.endsWith(".xml")) {
-            FileUtil.writeFile(new File("xm.xml"), false, NazvanieNePridumal.toXml(personStorage));
+            FileUtil.writeFile(new File("xm.xml"), false, TransferToFormat.toXml(personStorage));
 
         } else if (fileName.endsWith(".csv")) {
-            FileUtil.writeFile(new File("cv.csv"), false, NazvanieNePridumal.toCsv(personStorage));
+            FileUtil.writeFile(new File("cv.csv"), false, TransferToFormat.toCsv(personStorage));
 
         } else if (fileName.endsWith(".yaml")) {
-            FileUtil.writeFile(new File("ya.yaml"), false, NazvanieNePridumal.toYaml(personStorage));
+            FileUtil.writeFile(new File("ya.yaml"), false, TransferToFormat.toYaml(personStorage));
 
         }
     }

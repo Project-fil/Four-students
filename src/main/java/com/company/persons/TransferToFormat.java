@@ -1,22 +1,21 @@
-package com.company.Persons;
+package com.company.persons;
 
-import com.company.Persons.PersonCreate;
 import com.company.StorageOfPersons;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.company.Utils.FileUtil.*;
+import static com.company.utils.FileUtil.*;
 
-public class NazvanieNePridumal {
+public class TransferToFormat {
 
-    private NazvanieNePridumal() {
+    private TransferToFormat() {
     }
 
     public static String toJSON(StorageOfPersons personStorage) {
 
-        List<PersonCreate> personList = personStorage.getPersons();
+        List<Person> personList = personStorage.getPersons();
 
         File file = new File("js.json");
         StringBuffer sb = null;
@@ -26,7 +25,7 @@ public class NazvanieNePridumal {
             sb = new StringBuffer("[\n");
         }
         int count = 0;
-        for (PersonCreate person : personList)
+        for (Person person : personList)
         {
             sb.append("{\n");
             sb.append(" \"id\":").append(person.getId()).append(",\n");
@@ -50,7 +49,7 @@ public class NazvanieNePridumal {
 
     public static String toXml(StorageOfPersons personStorage) {
 
-        List<PersonCreate> personList = personStorage.getPersons();
+        List<Person> personList = personStorage.getPersons();
         File file = new File("xm.xml");
         StringBuffer sb = null;
 
@@ -59,7 +58,7 @@ public class NazvanieNePridumal {
         } else {
             sb = new StringBuffer("<Persons>\n");
         }
-        for (PersonCreate person : personList
+        for (Person person : personList
         ) {
             sb.append(" <Person>\n");
             sb.append(" <id>").append(person.getId()).append("</id>\n");
@@ -76,7 +75,7 @@ public class NazvanieNePridumal {
 
     public static String toCsv(StorageOfPersons personStorage) {
 
-        List<PersonCreate> personList = personStorage.getPersons();
+        List<Person> personList = personStorage.getPersons();
         File file = new File("cv.csv");
 
         StringBuffer sb = null;
@@ -86,7 +85,7 @@ public class NazvanieNePridumal {
             sb = new StringBuffer("id,firstName,lastName,age,city \n");
         }
 
-        for (PersonCreate person : personList
+        for (Person person : personList
         ) {
             sb.append(person.getId()).append(",")
                     .append(person.getFirstName()).append(",")
@@ -99,7 +98,7 @@ public class NazvanieNePridumal {
 
     public static String toYaml(StorageOfPersons personStorage) {
 
-        List<PersonCreate> personList = personStorage.getPersons();
+        List<Person> personList = personStorage.getPersons();
         File file = new File("ya.yaml");
         StringBuffer sb = null;
         if (personList.isEmpty()) {
@@ -107,7 +106,7 @@ public class NazvanieNePridumal {
         } else {
             sb = new StringBuffer("---\n");
         }
-        for (PersonCreate person : personList
+        for (Person person : personList
         ) {
             sb.append("- ")
                     .append("\"id:").append(person.getId())
@@ -121,14 +120,14 @@ public class NazvanieNePridumal {
         return sb.toString();
     }
 
-    public static List<PersonCreate> getAllObjects(String file) {
+    public static List<Person> getAllObjects(String file) {
 
         String results = getResultFromFile(file);
-        List<PersonCreate> persons = new ArrayList<>();
+        List<Person> persons = new ArrayList<>();
         if (!results.equals("")) {
             String[] arr = results.split(" ");
             for (int i = 0; i < arr.length; i = i + 5) {
-                persons.add(new PersonCreate(Integer.parseInt(arr[i]),
+                persons.add(new Person(Integer.parseInt(arr[i]),
                         arr[i + 1], arr[i + 2], Integer.parseInt(arr[i + 3]),
                         arr[i + 4]));
             }
@@ -137,9 +136,9 @@ public class NazvanieNePridumal {
     }
 
     public static void updatePerson(Integer id, String firstName, String lastName, Integer age, String city, StorageOfPersons personStorage) {
-        List<PersonCreate> personList = personStorage.getPersons();
+        List<Person> personList = personStorage.getPersons();
 
-        for (PersonCreate person : personList) {
+        for (Person person : personList) {
             if (person.getId().equals(id)) {
                 person.setFirstName(firstName);
                 person.setLastName(lastName);
@@ -150,7 +149,7 @@ public class NazvanieNePridumal {
     }
 
     public static void deleteById(Integer id, StorageOfPersons personStorage) {
-        List<PersonCreate> personList = personStorage.getPersons();
+        List<Person> personList = personStorage.getPersons();
         personList.removeIf(person -> person.getId().equals(id));
     }
 }

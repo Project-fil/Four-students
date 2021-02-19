@@ -1,7 +1,6 @@
-package com.company.Utils;
+package com.company.utils;
 
 import java.io.*;
-import java.util.List;
 import java.util.Scanner;
 
 public class FileUtil {

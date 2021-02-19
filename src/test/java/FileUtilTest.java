@@ -1,4 +1,4 @@
-import com.company.Utils.FileUtil;
+import com.company.utils.FileUtil;
 import org.junit.Assert;
 import org.junit.Test;
 

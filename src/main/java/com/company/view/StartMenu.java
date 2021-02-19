@@ -1,8 +1,8 @@
-package com.company.Dao;
+package com.company.view;
 
 import com.company.StorageOfPersons;
 
-public class Menu {
+public class StartMenu {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
     static StorageOfPersons personStorage;

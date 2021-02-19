@@ -1,17 +1,17 @@
-package com.company.Dao;
+package com.company.view;
 
-import com.company.Persons.NazvanieNePridumal;
-import com.company.Persons.PersonCreate;
-import com.company.Scanner.ScannerPers;
+import com.company.persons.TransferToFormat;
+import com.company.persons.Person;
+import com.company.scanner.ScannerPers;
 import com.company.StorageOfPersons;
-import com.company.Utils.FileUtil;
-import com.company.Utils.Helper;
+import com.company.utils.FileUtil;
+import com.company.utils.HelpersCommands;
 
 import java.io.File;
 
-import static com.company.Dao.MenuAndDaoTo.safeForFile;
+import static com.company.view.MenuAndDaoTo.safeForFile;
 
-public class Crud {
+public class Dialog {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
     static StorageOfPersons personStorage;
@@ -45,16 +45,16 @@ public class Crud {
 
                 if (fileName.endsWith(".json")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                    FileUtil.writeFile(new File("js.json"), false, NazvanieNePridumal.toJSON(personStorage));
+                    FileUtil.writeFile(new File("js.json"), false, TransferToFormat.toJSON(personStorage));
                 } else if (fileName.endsWith(".xml")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                    FileUtil.writeFile(new File("xm.xml"), false, NazvanieNePridumal.toXml(personStorage));
+                    FileUtil.writeFile(new File("xm.xml"), false, TransferToFormat.toXml(personStorage));
                 } else if (fileName.endsWith(".csv")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                    FileUtil.writeFile(new File("cv.csv"), false, NazvanieNePridumal.toCsv(personStorage));
+                    FileUtil.writeFile(new File("cv.csv"), false, TransferToFormat.toCsv(personStorage));
                 } else if (fileName.endsWith(".yaml")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                    FileUtil.writeFile(new File("ya.yaml"), false, NazvanieNePridumal.toYaml(personStorage));
+                    FileUtil.writeFile(new File("ya.yaml"), false, TransferToFormat.toYaml(personStorage));
                 }
                 break;
             }
@@ -65,7 +65,7 @@ public class Crud {
             case "3": {
                 System.out.println("Enter Id for update");
                 Integer id = scanner.nextInt();
-                PersonCreate person = Helper.getById(id, personStorage);
+                Person person = HelpersCommands.getById(id, personStorage);
                 if (person == null) {
                     System.out.println("Person with this id doesn't exist");
                 } else {
@@ -87,7 +87,7 @@ public class Crud {
                     System.out.print("Enter new city: ");
                     String cityScan = scanner.next();
 
-                    NazvanieNePridumal.updatePerson(id, firstNameScan, lastNameScan, ageScan, cityScan, personStorage);
+                    TransferToFormat.updatePerson(id, firstNameScan, lastNameScan, ageScan, cityScan, personStorage);
 
                     safeForFile(fileName);
 
@@ -97,7 +97,7 @@ public class Crud {
             case "4": {
                 System.out.println("Enter Id for delete");
                 Integer id = scanner.nextInt();
-                NazvanieNePridumal.deleteById(id, personStorage);
+                TransferToFormat.deleteById(id, personStorage);
                 safeForFile(fileName);
                 break;
             }

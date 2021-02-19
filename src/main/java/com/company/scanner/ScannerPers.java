@@ -1,6 +1,6 @@
-package com.company.Scanner;
+package com.company.scanner;
 
-import com.company.Persons.PersonCreate;
+import com.company.persons.Person;
 import com.company.StorageOfPersons;
 
 import java.util.List;
@@ -10,12 +10,12 @@ public class ScannerPers {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
-    public static PersonCreate createPerson(StorageOfPersons personStorage,
-                                            String firstNameScan,
-                                            String lastNameScan,
-                                            Integer ageScan, String cityScan) {
+    public static Person createPerson(StorageOfPersons personStorage,
+                                      String firstNameScan,
+                                      String lastNameScan,
+                                      Integer ageScan, String cityScan) {
         Integer id = 0;
-        List<PersonCreate> personList = personStorage.getPersons();
+        List<Person> personList = personStorage.getPersons();
         if (personList.isEmpty()) {
             id = 0;
         } else {
@@ -29,7 +29,7 @@ public class ScannerPers {
             id++;
         }
         System.out.println("Your id=" + id + ")");
-        return new PersonCreate(id, firstNameScan, lastNameScan, ageScan, cityScan);
+        return new Person(id, firstNameScan, lastNameScan, ageScan, cityScan);
     }
 }
 

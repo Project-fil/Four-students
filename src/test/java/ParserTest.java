@@ -1,5 +1,5 @@
-import com.company.Persons.NazvanieNePridumal;
-import com.company.Persons.PersonCreate;
+import com.company.persons.TransferToFormat;
+import com.company.persons.Person;
 import com.company.StorageOfPersons;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,11 +10,11 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class ParserTest {
-    private List<PersonCreate> personList = new ArrayList<>();
+    private List<Person> personList = new ArrayList<>();
 
     @Before
     public void setUp() {
-        PersonCreate person = new PersonCreate(1, "lolo", "wow", 20, "Kyiv");
+        Person person = new Person(1, "lolo", "wow", 20, "Kyiv");
         personList.add(person);
     }
 
@@ -33,7 +33,7 @@ public class ParserTest {
                 " }\n" +
                 "]";
 
-        String result = NazvanieNePridumal.toJSON(personStorage);
+        String result = TransferToFormat.toJSON(personStorage);
         assertEquals(expected, result);
     }
 
@@ -51,7 +51,7 @@ public class ParserTest {
                 " </Person>\n" +
                 "</Persons>\n";
 
-        String result = NazvanieNePridumal.toXml(personStorage);
+        String result = TransferToFormat.toXml(personStorage);
         assertEquals(expected, result);
     }
 
@@ -62,7 +62,7 @@ public class ParserTest {
         String expected = "id,firstName,lastName,age,city \n" +
                 "1,lolo,wow,20,Kyiv \n";
 
-        String result = NazvanieNePridumal.toCsv(personStorage);
+        String result = TransferToFormat.toCsv(personStorage);
         assertEquals(expected, result);
     }
 
@@ -73,41 +73,41 @@ public class ParserTest {
         String expected = "---\n" +
                 "- \"id:1, firstName:lolo,lastName:wow,age:20,city:Kyiv\" \n";
 
-        String result = NazvanieNePridumal.toYaml(personStorage);
+        String result = TransferToFormat.toYaml(personStorage);
         assertEquals(expected, result);
     }
 
     @Test
     public void getAllObjectsTest() {
 
-        List<PersonCreate> data = new ArrayList<>();
-        data.add(new PersonCreate(0, "1", "2", 3, "4"));
-        List<PersonCreate> actual = NazvanieNePridumal.getAllObjects("./fileTest/jsTest.json");
+        List<Person> data = new ArrayList<>();
+        data.add(new Person(0, "1", "2", 3, "4"));
+        List<Person> actual = TransferToFormat.getAllObjects("./fileTest/jsTest.json");
         assertEquals(data, actual);
     }
 
     @Test
     public void updatePersonTest() {
 
-        List<PersonCreate> expected = new ArrayList<>();
-        expected.add(new PersonCreate(0, "1", "2", 3, "4"));
+        List<Person> expected = new ArrayList<>();
+        expected.add(new Person(0, "1", "2", 3, "4"));
         StorageOfPersons personStorage = new StorageOfPersons(expected);
-        NazvanieNePridumal.updatePerson(0, "3", "3", 3, "3", personStorage);
+        TransferToFormat.updatePerson(0, "3", "3", 3, "3", personStorage);
 
-        List<PersonCreate> actual = new ArrayList<>();
-        actual.add(new PersonCreate(0, "3", "3", 3, "3"));
+        List<Person> actual = new ArrayList<>();
+        actual.add(new Person(0, "3", "3", 3, "3"));
         assertEquals(expected, actual);
     }
 
     @Test
     public void deleteByIdTest() {
 
-        List<PersonCreate> expected = new ArrayList<>();
-        expected.add(new PersonCreate(0, "1", "2", 3, "4"));
+        List<Person> expected = new ArrayList<>();
+        expected.add(new Person(0, "1", "2", 3, "4"));
         StorageOfPersons personStorage = new StorageOfPersons(expected);
-        NazvanieNePridumal.deleteById(0, personStorage);
+        TransferToFormat.deleteById(0, personStorage);
 
-        List<PersonCreate> actual = new ArrayList<>();
+        List<Person> actual = new ArrayList<>();
         assertEquals(personStorage.getPersons(), actual);
     }
 }
