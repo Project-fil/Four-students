@@ -21,16 +21,16 @@ public class HelperTest {
     @Before
     public void setUp() {
         List<PersonCreate> personList = new ArrayList<>();
-        PersonCreate person = new PersonCreate(1, "Vlad",
-                "Lutsenko", 20, "Kyiv");
+        PersonCreate person = new PersonCreate(1, "lolo",
+                "wow", 20, "Kyiv");
         personList.add(person);
         personStorage = new StorageOfPersons(personList);
     }
     @Before
     public void setUp2() {
         List<PersonCreate> personList = new ArrayList<>();
-        PersonCreate person = new PersonCreate(1, "Vlad",
-                "Lutsenko", 20, "Kyiv");
+        PersonCreate person = new PersonCreate(1, "lolo",
+                "wow", 20, "Kyiv");
         personList.add(person);
         personStorage = new StorageOfPersons(personList);
         FileUtil.writeFile(new File("jsTest2.json"), false, Hui.toJSON(personStorage));
