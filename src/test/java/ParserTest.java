@@ -14,7 +14,7 @@ public class ParserTest {
 
     @Before
     public void setUp() {
-        PersonCreate person = new PersonCreate(1, "Vlad", "Lutsenko", 20, "Kyiv");
+        PersonCreate person = new PersonCreate(1, "lolo", "wow", 20, "Kyiv");
         personList.add(person);
     }
 
@@ -26,8 +26,8 @@ public class ParserTest {
         String expected = "[\n" +
                 "{\n" +
                 " \"id\":1,\n" +
-                " \"firstName\":\"Vlad\",\n" +
-                " \"lastName\":\"Lutsenko\",\n" +
+                " \"firstName\":\"lol\",\n" +
+                " \"lastName\":\"wow\",\n" +
                 " \"age\":20,\n" +
                 " \"city\":\"Kyiv\" \n" +
                 " }\n" +
@@ -44,8 +44,8 @@ public class ParserTest {
         String expected = "<Persons>\n" +
                 " <Person>\n" +
                 " <id>1</id>\n" +
-                " <firstName>Vlad</firstName>\n" +
-                " <lastName>Lutsenko</lastName>\n" +
+                " <firstName>lolo</firstName>\n" +
+                " <lastName>wow</lastName>\n" +
                 " <age>20</age>\n" +
                 " <city>Kyiv</city>\n" +
                 " </Person>\n" +
@@ -60,7 +60,7 @@ public class ParserTest {
 
         StorageOfPersons personStorage = new StorageOfPersons(personList);
         String expected = "id,firstName,lastName,age,city \n" +
-                "1,Vlad,Lutsenko,20,Kyiv \n";
+                "1,lolo,wow,20,Kyiv \n";
 
         String result = Hui.toCsv(personStorage);
         assertEquals(expected, result);
@@ -71,7 +71,7 @@ public class ParserTest {
 
         StorageOfPersons personStorage = new StorageOfPersons(personList);
         String expected = "---\n" +
-                "- \"id:1, firstName:Vlad,lastName:Lutsenko,age:20,city:Kyiv\" \n";
+                "- \"id:1, firstName:lolo,lastName:wow,age:20,city:Kyiv\" \n";
 
         String result = Hui.toYaml(personStorage);
         assertEquals(expected, result);
