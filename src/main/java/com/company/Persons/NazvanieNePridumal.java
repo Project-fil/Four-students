@@ -9,9 +9,9 @@ import java.util.List;
 
 import static com.company.Utils.FileUtil.*;
 
-public class Hui {
+public class NazvanieNePridumal {
 
-    private Hui() {
+    private NazvanieNePridumal() {
     }
 
     public static String toJSON(StorageOfPersons personStorage) {

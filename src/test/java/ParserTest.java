@@ -1,4 +1,4 @@
-import com.company.Persons.Hui;
+import com.company.Persons.NazvanieNePridumal;
 import com.company.Persons.PersonCreate;
 import com.company.StorageOfPersons;
 import org.junit.Before;
@@ -33,7 +33,7 @@ public class ParserTest {
                 " }\n" +
                 "]";
 
-        String result = Hui.toJSON(personStorage);
+        String result = NazvanieNePridumal.toJSON(personStorage);
         assertEquals(expected, result);
     }
 
@@ -51,7 +51,7 @@ public class ParserTest {
                 " </Person>\n" +
                 "</Persons>\n";
 
-        String result = Hui.toXml(personStorage);
+        String result = NazvanieNePridumal.toXml(personStorage);
         assertEquals(expected, result);
     }
 
@@ -62,7 +62,7 @@ public class ParserTest {
         String expected = "id,firstName,lastName,age,city \n" +
                 "1,lolo,wow,20,Kyiv \n";
 
-        String result = Hui.toCsv(personStorage);
+        String result = NazvanieNePridumal.toCsv(personStorage);
         assertEquals(expected, result);
     }
 
@@ -73,7 +73,7 @@ public class ParserTest {
         String expected = "---\n" +
                 "- \"id:1, firstName:lolo,lastName:wow,age:20,city:Kyiv\" \n";
 
-        String result = Hui.toYaml(personStorage);
+        String result = NazvanieNePridumal.toYaml(personStorage);
         assertEquals(expected, result);
     }
 
@@ -82,7 +82,7 @@ public class ParserTest {
 
         List<PersonCreate> data = new ArrayList<>();
         data.add(new PersonCreate(0, "1", "2", 3, "4"));
-        List<PersonCreate> actual = Hui.getAllObjects("./fileTest/jsTest.json");
+        List<PersonCreate> actual = NazvanieNePridumal.getAllObjects("./fileTest/jsTest.json");
         assertEquals(data, actual);
     }
 
@@ -92,7 +92,7 @@ public class ParserTest {
         List<PersonCreate> expected = new ArrayList<>();
         expected.add(new PersonCreate(0, "1", "2", 3, "4"));
         StorageOfPersons personStorage = new StorageOfPersons(expected);
-        Hui.updatePerson(0, "3", "3", 3, "3", personStorage);
+        NazvanieNePridumal.updatePerson(0, "3", "3", 3, "3", personStorage);
 
         List<PersonCreate> actual = new ArrayList<>();
         actual.add(new PersonCreate(0, "3", "3", 3, "3"));
@@ -105,7 +105,7 @@ public class ParserTest {
         List<PersonCreate> expected = new ArrayList<>();
         expected.add(new PersonCreate(0, "1", "2", 3, "4"));
         StorageOfPersons personStorage = new StorageOfPersons(expected);
-        Hui.deleteById(0, personStorage);
+        NazvanieNePridumal.deleteById(0, personStorage);
 
         List<PersonCreate> actual = new ArrayList<>();
         assertEquals(personStorage.getPersons(), actual);

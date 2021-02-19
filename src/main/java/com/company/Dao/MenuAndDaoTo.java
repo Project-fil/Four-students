@@ -1,6 +1,6 @@
 package com.company.Dao;
 
-import com.company.Persons.Hui;
+import com.company.Persons.NazvanieNePridumal;
 import com.company.StorageOfPersons;
 import com.company.Utils.FileUtil;
 
@@ -33,7 +33,7 @@ public class MenuAndDaoTo {
                         else
                             System.out.println("File already exists");
                     }
-                    personStorage = new StorageOfPersons(Hui.getAllObjects("js.json"));
+                    personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("js.json"));
 
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
@@ -75,7 +75,7 @@ public class MenuAndDaoTo {
                             System.out.println("File already exists");
                     }
 
-                    personStorage = new StorageOfPersons(Hui.getAllObjects("xm.xml"));
+                    personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("xm.xml"));
 
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
@@ -117,7 +117,7 @@ public class MenuAndDaoTo {
                             System.out.println("File already exists");
                     }
 
-                    personStorage = new StorageOfPersons(Hui.getAllObjects("cv.csv"));
+                    personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("cv.csv"));
                     while (flag) {
 
                             String typeOfAction = Crud.crudHui("Select action: \nEnter 1 for CRUD " +
@@ -157,7 +157,7 @@ public class MenuAndDaoTo {
                             System.out.println("File already exists");
                     }
 
-                    personStorage = new StorageOfPersons(Hui.getAllObjects("ya.yaml"));
+                    personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("ya.yaml"));
 
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
@@ -217,16 +217,16 @@ public class MenuAndDaoTo {
 
     public static void safeForFile(String fileName) {
         if (fileName.endsWith(".json")) {
-            FileUtil.writeFile(new File("js.json"), false, Hui.toJSON(personStorage));
+            FileUtil.writeFile(new File("js.json"), false, NazvanieNePridumal.toJSON(personStorage));
 
         } else if (fileName.endsWith(".xml")) {
-            FileUtil.writeFile(new File("xm.xml"), false, Hui.toXml(personStorage));
+            FileUtil.writeFile(new File("xm.xml"), false, NazvanieNePridumal.toXml(personStorage));
 
         } else if (fileName.endsWith(".csv")) {
-            FileUtil.writeFile(new File("cv.csv"), false, Hui.toCsv(personStorage));
+            FileUtil.writeFile(new File("cv.csv"), false, NazvanieNePridumal.toCsv(personStorage));
 
         } else if (fileName.endsWith(".yaml")) {
-            FileUtil.writeFile(new File("ya.yaml"), false, Hui.toYaml(personStorage));
+            FileUtil.writeFile(new File("ya.yaml"), false, NazvanieNePridumal.toYaml(personStorage));
 
         }
     }

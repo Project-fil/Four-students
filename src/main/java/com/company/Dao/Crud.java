@@ -1,6 +1,6 @@
 package com.company.Dao;
 
-import com.company.Persons.Hui;
+import com.company.Persons.NazvanieNePridumal;
 import com.company.Persons.PersonCreate;
 import com.company.Scanner.ScannerPers;
 import com.company.StorageOfPersons;
@@ -45,16 +45,16 @@ public class Crud {
 
                 if (fileName.endsWith(".json")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                    FileUtil.writeFile(new File("js.json"), false, Hui.toJSON(personStorage));
+                    FileUtil.writeFile(new File("js.json"), false, NazvanieNePridumal.toJSON(personStorage));
                 } else if (fileName.endsWith(".xml")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                    FileUtil.writeFile(new File("xm.xml"), false, Hui.toXml(personStorage));
+                    FileUtil.writeFile(new File("xm.xml"), false, NazvanieNePridumal.toXml(personStorage));
                 } else if (fileName.endsWith(".csv")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                    FileUtil.writeFile(new File("cv.csv"), false, Hui.toCsv(personStorage));
+                    FileUtil.writeFile(new File("cv.csv"), false, NazvanieNePridumal.toCsv(personStorage));
                 } else if (fileName.endsWith(".yaml")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                    FileUtil.writeFile(new File("ya.yaml"), false, Hui.toYaml(personStorage));
+                    FileUtil.writeFile(new File("ya.yaml"), false, NazvanieNePridumal.toYaml(personStorage));
                 }
                 break;
             }
@@ -87,7 +87,7 @@ public class Crud {
                     System.out.print("Enter new city: ");
                     String cityScan = scanner.next();
 
-                    Hui.updatePerson(id, firstNameScan, lastNameScan, ageScan, cityScan, personStorage);
+                    NazvanieNePridumal.updatePerson(id, firstNameScan, lastNameScan, ageScan, cityScan, personStorage);
 
                     safeForFile(fileName);
 
@@ -97,7 +97,7 @@ public class Crud {
             case "4": {
                 System.out.println("Enter Id for delete");
                 Integer id = scanner.nextInt();
-                Hui.deleteById(id, personStorage);
+                NazvanieNePridumal.deleteById(id, personStorage);
                 safeForFile(fileName);
                 break;
             }

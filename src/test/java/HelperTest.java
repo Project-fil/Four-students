@@ -1,5 +1,5 @@
 import com.company.*;
-import com.company.Persons.Hui;
+import com.company.Persons.NazvanieNePridumal;
 import com.company.Persons.PersonCreate;
 import com.company.Utils.FileUtil;
 import com.company.Utils.Helper;
@@ -33,7 +33,7 @@ public class HelperTest {
                 "wow", 20, "Kyiv");
         personList.add(person);
         personStorage = new StorageOfPersons(personList);
-        FileUtil.writeFile(new File("jsTest2.json"), false, Hui.toJSON(personStorage));
+        FileUtil.writeFile(new File("jsTest2.json"), false, NazvanieNePridumal.toJSON(personStorage));
     }
 
     @Test
