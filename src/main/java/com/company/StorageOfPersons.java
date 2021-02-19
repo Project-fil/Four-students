@@ -1,6 +1,6 @@
-package crud4stud;
+package com.company;
 
-import crud4stud.persons.PersonCreate;
+import com.company.Persons.PersonCreate;
 
 import java.util.ArrayList;
 import java.util.List;

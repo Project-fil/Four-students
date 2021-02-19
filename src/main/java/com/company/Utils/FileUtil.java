@@ -1,10 +1,10 @@
-package crud4stud.utils;
+package com.company.Utils;
 
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 
-public class Utils {
+public class FileUtil {
 
     public static String readFile(String path) {
         StringBuilder sb = new StringBuilder();

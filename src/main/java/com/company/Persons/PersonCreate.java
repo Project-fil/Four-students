@@ -1,4 +1,4 @@
-package crud4stud.persons;
+package com.company.Persons;
 
 import java.util.Objects;
 
