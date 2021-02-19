@@ -120,7 +120,7 @@ public class MenuAndDaoTo {
                     personStorage = new StorageOfPersons(NazvanieNePridumal.getAllObjects("cv.csv"));
                     while (flag) {
 
-                            String typeOfAction = Crud.crudHui("Select action: \nEnter 1 for CRUD " +
+                            String typeOfAction = Crud.crudMessages("Select action: \nEnter 1 for CRUD " +
                                     "\nEnter 2 for HELPERS \n ");
                         if (typeOfAction.equals("1")) {
                             System.out.print("Select action: \nEnter 1 for Create " +
