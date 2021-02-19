@@ -10,8 +10,8 @@ public class Helper123 {
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
     static StorageOfPersons personStorage;
 
-    public static void helperMenu(String action, StorageOfPersons personStorage,
-                                  String fileName) {
+    public static void personAdd(String action, StorageOfPersons personStorage,
+                                 String fileName) {
         switch (action) {
             case "1": {
                 System.out.println("Enter Id ");

@@ -1,11 +1,8 @@
 package com.company.Dao;
 
 import com.company.Persons.Hui;
-import com.company.Persons.PersonCreate;
 import com.company.StorageOfPersons;
-import com.company.Scanner.ScannerPers;
 import com.company.Utils.FileUtil;
-import com.company.Utils.Helper;
 
 import java.io.File;
 
@@ -57,7 +54,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 5 for getAllByLastName " +
                                     "\nEnter 6 for deleteAll \n ");
                             String action = scanner.next();
-                            Helper123.helperMenu(action, personStorage,
+                            Helper123.personAdd(action, personStorage,
                                     getFileNameByTypeOfFile(typeOfFile));
                         }
                         System.out.println("Enter 1 for continue or 2 for exit");
@@ -99,7 +96,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 5 for getAllByLastName " +
                                     "\nEnter 6 for deleteAll \n ");
                             String action = scanner.next();
-                            Helper123.helperMenu(action, personStorage,
+                            Helper123.personAdd(action, personStorage,
                                     getFileNameByTypeOfFile(typeOfFile));
                         }
                         System.out.println("Enter 1 for continue or 2 for exit");
@@ -139,7 +136,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 5 for getAllByLastName " +
                                     "\nEnter 6 for deleteAll \n ");
                             String action = scanner.next();
-                            Helper123.helperMenu(action, personStorage,
+                            Helper123.personAdd(action, personStorage,
                                     getFileNameByTypeOfFile(typeOfFile));
                         }
                         System.out.println("Enter 1 for continue or 2 for exit");
@@ -181,7 +178,7 @@ public class MenuAndDaoTo {
                                     "\nEnter 5 for getAllByLastName " +
                                     "\nEnter 6 for deleteAll \n ");
                             String action = scanner.next();
-                            Helper123.helperMenu(action, personStorage,
+                            Helper123.personAdd(action, personStorage,
                                     getFileNameByTypeOfFile(typeOfFile));
                         }
                         System.out.println("Enter 1 for continue or 2 for exit");

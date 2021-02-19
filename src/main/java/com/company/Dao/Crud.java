@@ -16,7 +16,7 @@ public class Crud {
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
     static StorageOfPersons personStorage;
 
-    public static String crudHui(String message){
+    public static String crudHui(String message){           //сюда позже залетим
         System.out.print(message);
                        String typeOfAction = scanner.next();
             return typeOfAction;
