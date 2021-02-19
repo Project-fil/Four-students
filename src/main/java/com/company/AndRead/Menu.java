@@ -1,4 +1,5 @@
-package com.company.realProject;
+
+package com.company.AndRead;
 
 import java.io.*;
 import java.util.Scanner;
@@ -17,8 +18,15 @@ public class Menu {
             "\nEnter 2 for XML \nEnter 3 for CSV " +
             "\nEnter 4 for YAML \n ";
 
+    public static final String menuHelpers = "Select action: \nEnter 1 for Exit" +
+            "\nEnter 2 for Help \nEnter 3 for Switch \n";
+
+
     public static final Scanner scanner = new Scanner(System.in);
-    private static class PersonStorage {}
+
+    private static class PersonStorage {
+    }
+
     private static PersonStorage personStorage;
 
     public static void showMenu() {
@@ -33,13 +41,14 @@ public class Menu {
                 String typeOfFile = scanner.next();
                 boolean flag = true;
                 String ac = null;
+            } else if (typeOfAction.equals("2")) {
+                System.out.println(menuHelpers);
+
             }
-
-
         }
     }
-    public static void main (String[]args){
-        String s = null;
-        showMenu();
-    }
+        public static void main (String[]args){
+            String s = null;
+            showMenu();
+        }
 }
