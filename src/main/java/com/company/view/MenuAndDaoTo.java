@@ -12,39 +12,25 @@ public class MenuAndDaoTo {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
     static StorageOfPersons personStorage;
 
-    public static void showMenu() {         //create
+    public static void showMenu() {
         boolean flagfor = true;
         while (flagfor) {
             System.out.println(Menu.menuCrudHelpers);
             String menuChoise = scanner.next();
-            boolean flag = true;
-            String ac = null;
             try {
                 if (menuChoise.equals("1")) {
                     System.out.println(Menu.fileType);
-                    System.out.println();
                     String fileTypes = scanner.next();
                     System.out.println(Menu.menuCrud);
                     String crudChoose = scanner.next();
                     CrudDialog.crudMenu(crudChoose, fileTypes);
                 }
-                if (menuChoise.equals("1")) {
-                    if (!new File("js.json").isFile()) {
-                        File f = new File("js.json");
-
-                        if (f.createNewFile())
-                            System.out.println("File created");
-                        else
-                            System.out.println("File already exists");
-                    }
-
-                    personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("js.json"));
-                } else {
+                  if (menuChoise.equals("2")) {
+                   System.out.println(Menu.menuHelpers);
+                   String helpersChoose = scanner.next();
+                   HelperMenu.helpersMethot(helpersChoose);
+                }  else{
                     continue;
-                }
-                if (ac.equals("2")) {
-                    flagfor = false;
-                    safeForFile(menuChoise);
                 }
             } catch (Exception e) {
                 System.out.println("Error) data is written to file");

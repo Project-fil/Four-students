@@ -11,14 +11,11 @@ public class Menu {
             "\nEnter 4 for Delete \n ";
     public static final String fileType = "Select a file type: \nEnter 1 for JSON " +
             "\nEnter 2 for XML \nEnter 3 for CSV " +
-            "\nEnter 4 for YAML \n ";
-    public static final String menuHelpers = "Select action: \nEnter 1 for Exit" +
-            "\nEnter 2 for Help \nEnter 3 for Switch \n";
-
+            "\nEnter 4 for YAML \nEnter 5 for Binary \n";
+    public static final String menuHelpers = "Select action: \nEnter 1 for Help" +
+            "\nEnter 2 for Switch \nEnter 3 for Exit \n";
     public static final Scanner scanner = new Scanner(System.in);
-    private static class PersonStorage {
-    }
-    private static PersonStorage personStorage;
+
     public static void showMenu() {
         boolean flagfor = true;
         while (flagfor) {

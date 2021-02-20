@@ -11,9 +11,9 @@ public class PersonBuilderTest {
     @Test
     public void createPersonTest(){
         StorageOfPersons personStorage = new StorageOfPersons(new ArrayList<Person>());
-        Person expected = new Person(0,"lolo", "wow20,"kyiv");
-                Person actual = ScannerPers.createPerson(personStorage,"lolo
-                "lolo", 20,"kyiv");
+        Person expected = new Person(0,"lolo", "wow20", 2,"kyiv");
+                Person actual = ScannerPers.createPerson(personStorage,"lolo",
+                "lolo", 20, "kyiv");
         assertEquals(expected,actual);
     }
 }
