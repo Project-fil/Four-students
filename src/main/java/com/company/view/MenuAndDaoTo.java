@@ -1,6 +1,6 @@
 package com.company.view;
 
-import com.company.adnhz.Menu;
+import com.company.adnhz.ShowMenu;
 import com.company.persons.TransferToFormat;
 import com.company.StorageOfPersons;
 import com.company.utils.FileUtil;
@@ -15,18 +15,18 @@ public class MenuAndDaoTo {
     public static void showMenu() {
         boolean flagfor = true;
         while (flagfor) {
-            System.out.println(Menu.menuCrudHelpers);
+            System.out.println(ShowMenu.menuCrudHelpers);
             String menuChoise = scanner.next();
             try {
                 if (menuChoise.equals("1")) {
-                    System.out.println(Menu.fileType);
+                    System.out.println(ShowMenu.fileType);
                     String fileTypes = scanner.next();
-                    System.out.println(Menu.menuCrud);
+                    System.out.println(ShowMenu.menuCrud);
                     String crudChoose = scanner.next();
                     CrudDialog.crudMenu(crudChoose, fileTypes);
                 }
                   if (menuChoise.equals("2")) {
-                   System.out.println(Menu.menuHelpers);
+                   System.out.println(ShowMenu.menuHelpers);
                    String helpersChoose = scanner.next();
                    HelperMenu.helpersMethot(helpersChoose);
                 }  else{
@@ -37,19 +37,6 @@ public class MenuAndDaoTo {
                 safeForFile(menuChoise);
             }
         }
-    }
-
-    public static String getFileNameByTypeOfFile(String typeOfFile) {
-        if (typeOfFile.equals("1")) {
-            return "js.json";
-        } else if (typeOfFile.equals("2")) {
-            return "xm.xml";
-        } else if (typeOfFile.equals("3")) {
-            return "cv.csv";
-        } else if (typeOfFile.equals("4")) {
-            return "ya.yaml";
-        }
-        return "";
     }
 
     public static void safeForFile(String fileName) {
