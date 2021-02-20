@@ -15,22 +15,23 @@ public class MenuAndDaoTo {
     public static void showMenu() {         //create
         boolean flagfor = true;
         while (flagfor) {
-//            System.out.print("Select a file type: \nEnter 1 for JSON " +
-//                    "\nEnter 2 for XML \nEnter 3 for CSV " +
-//                    "\nEnter 4 for YAML \n ");
+            System.out.print("Select a file type: \nEnter 1 for JSON " +
+                    "\nEnter 2 for XML \nEnter 3 for CSV " +
+                    "\nEnter 4 for YAML \n ");
             System.out.println(Menu.menuCrudHelpers);
-
-            String typeOfFile = scanner.next();
+            String menuChoise = scanner.next();
             boolean flag = true;
             String ac = null;
             try {
-                    if (typeOfFile.equals("1")){
+                    if (menuChoise.equals("1")){
+                        System.out.println(Menu.fileType);
+                        String fileTypes = scanner.next();
                             System.out.println(Menu.menuCrud);
+
                             String crudChoose = scanner.next();
-                            if (crudChoose.equals(1)){
-                                Dialog.crudMenu();
+                                Dialog.crudMenu(crudChoose,fileTypes);
                             }
-//                if (typeOfFile.equals("1")) {
+//                if (menuChoise.equals("1")) {
 //                    if(!new File("js.json").isFile())
 //                    {
 //                        File f = new File("js.json");
@@ -60,7 +61,7 @@ public class MenuAndDaoTo {
 //                                    "\nEnter 6 for deleteAll \n ");
 //                            String action = scanner.next();
 //                            HelperMenu.personAdd(action, personStorage,
-//                                    getFileNameByTypeOfFile(typeOfFile));
+//                                    getFileNameByTypeOfFile(menuChoise));
 //                        }
 //                        System.out.println("Enter 1 for continue or 2 for exit");
 //                        ac = new java.util.Scanner(System.in).next();
@@ -68,7 +69,7 @@ public class MenuAndDaoTo {
 //                            flag = false;
 //                        }
 //                    }
-//                } else if (typeOfFile.equals("2")) {
+//                } else if (menuChoise.equals("2")) {
 //
 //                    if(!new File("xm.xml").isFile())
 //                    {
@@ -99,7 +100,7 @@ public class MenuAndDaoTo {
 //                                    "\nEnter 6 for deleteAll \n ");
 //                            String action = scanner.next();
 //                            HelperMenu.personAdd(action, personStorage,
-//                                    getFileNameByTypeOfFile(typeOfFile));
+//                                    getFileNameByTypeOfFile(menuChoise));
 //                        }
 //                        System.out.println("Enter 1 for continue or 2 for exit");
 //                        ac = new java.util.Scanner(System.in).next();
@@ -107,7 +108,7 @@ public class MenuAndDaoTo {
 //                            flag = false;
 //                        }
 //                    }
-//                } else if (typeOfFile.equals("3")) {
+//                } else if (menuChoise.equals("3")) {
 //                    if(!new File("cv.csv").isFile())
 //                    {
 //                        File f = new File("cv.csv");
@@ -135,7 +136,7 @@ public class MenuAndDaoTo {
 //                                    "\nEnter 6 for deleteAll \n ");
 //                            String action = scanner.next();
 //                            HelperMenu.personAdd(action, personStorage,
-//                                    getFileNameByTypeOfFile(typeOfFile));
+//                                    getFileNameByTypeOfFile(menuChoise));
 //                        }
 //                        System.out.println("Enter 1 for continue or 2 for exit");
 //                        ac = new java.util.Scanner(System.in).next();
@@ -143,7 +144,7 @@ public class MenuAndDaoTo {
 //                            flag = false;
 //                        }
 //                    }
-//                } else if (typeOfFile.equals("4")) {
+//                } else if (menuChoise.equals("4")) {
 //
 //                    if(!new File("ya.yaml").isFile())
 //                    {
@@ -174,7 +175,7 @@ public class MenuAndDaoTo {
 //                                    "\nEnter 6 for deleteAll \n ");
 //                            String action = scanner.next();
 //                            HelperMenu.personAdd(action, personStorage,
-//                                    getFileNameByTypeOfFile(typeOfFile));
+//                                    getFileNameByTypeOfFile(menuChoise));
 //                        }
 //                        System.out.println("Enter 1 for continue or 2 for exit");
 //                        ac = new java.util.Scanner(System.in).next();
@@ -187,7 +188,7 @@ public class MenuAndDaoTo {
                 }
                 if (ac.equals("2")) {
                     flagfor = false;
-                    safeForFile(typeOfFile);
+                    safeForFile(menuChoise);
                 }
             } catch (Exception e) {
                 System.out.println("Error) data is written to file");
