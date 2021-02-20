@@ -1,22 +1,17 @@
 package com.company.persons;
 
 import com.company.StorageOfPersons;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import static com.company.utils.FileUtil.*;
 
 public class TransferToFormat {
 
     private TransferToFormat() {
     }
-
     public static String toJSON(StorageOfPersons personStorage) {
-
         List<Person> personList = personStorage.getPersons();
-
         File file = new File("js.json");
         StringBuffer sb = null;
         if (personList.isEmpty())
@@ -33,7 +28,6 @@ public class TransferToFormat {
             sb.append(" \"lastName\":\"").append(person.getLastName()).append("\",\n");
             sb.append(" \"age\":").append(person.getAge()).append(",\n");
             sb.append(" \"city\":\"").append(person.getCity()).append("\" \n");
-
             count++;
             if (count == personList.size()) {
                 sb.append(" }\n");
@@ -46,13 +40,10 @@ public class TransferToFormat {
         }
         return sb.toString();
     }
-
     public static String toXml(StorageOfPersons personStorage) {
-
         List<Person> personList = personStorage.getPersons();
         File file = new File("xm.xml");
         StringBuffer sb = null;
-
         if (personList.isEmpty()) {
             sb = new StringBuffer("");
         } else {
@@ -72,19 +63,15 @@ public class TransferToFormat {
             sb.append("</Persons>\n");
         return sb.toString();
     }
-
     public static String toCsv(StorageOfPersons personStorage) {
-
         List<Person> personList = personStorage.getPersons();
         File file = new File("cv.csv");
-
         StringBuffer sb = null;
         if (personList.isEmpty()) {
             sb = new StringBuffer("");
         } else {
             sb = new StringBuffer("id,firstName,lastName,age,city \n");
         }
-
         for (Person person : personList
         ) {
             sb.append(person.getId()).append(",")
@@ -95,9 +82,7 @@ public class TransferToFormat {
         }
         return sb.toString();
     }
-
     public static String toYaml(StorageOfPersons personStorage) {
-
         List<Person> personList = personStorage.getPersons();
         File file = new File("ya.yaml");
         StringBuffer sb = null;
@@ -119,9 +104,7 @@ public class TransferToFormat {
         }
         return sb.toString();
     }
-
     public static List<Person> getAllObjects(String file) {
-
         String results = getResultFromFile(file);
         List<Person> persons = new ArrayList<>();
         if (!results.equals("")) {
@@ -134,10 +117,8 @@ public class TransferToFormat {
         }
         return persons;
     }
-
     public static void updatePerson(Integer id, String firstName, String lastName, Integer age, String city, StorageOfPersons personStorage) {
         List<Person> personList = personStorage.getPersons();
-
         for (Person person : personList) {
             if (person.getId().equals(id)) {
                 person.setFirstName(firstName);
@@ -147,15 +128,8 @@ public class TransferToFormat {
             }
         }
     }
-
     public static void deleteById(Integer id, StorageOfPersons personStorage) {
         List<Person> personList = personStorage.getPersons();
         personList.removeIf(person -> person.getId().equals(id));
     }
 }
-
-
-
-
-
-

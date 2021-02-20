@@ -17,12 +17,10 @@ public class MenuAndDaoTo {
             System.out.print("Select a file type: \nEnter 1 for JSON " +
                     "\nEnter 2 for XML \nEnter 3 for CSV " +
                     "\nEnter 4 for YAML \n ");
-
             String typeOfFile = scanner.next();
             boolean flag = true;
             String ac = null;
             try {
-
                 if (typeOfFile.equals("1")) {
                     if(!new File("js.json").isFile())
                     {
@@ -34,12 +32,10 @@ public class MenuAndDaoTo {
                             System.out.println("File already exists");
                     }
                     personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("js.json"));
-
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
                                 "\nEnter 2 for HELPERS \n ");
                         String typeOfAction = scanner.next();
-
                         if (typeOfAction.equals("1")) {
                             System.out.print("Select action: \nEnter 1 for Create " +
                                     "\nEnter 2 for ReadAll \nEnter 3 for Update " +
@@ -74,13 +70,10 @@ public class MenuAndDaoTo {
                         else
                             System.out.println("File already exists");
                     }
-
                     personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("xm.xml"));
-
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
                                 "\nEnter 2 for HELPERS \n ");
-
                         String typeOfAction = scanner.next();
                         if (typeOfAction.equals("1")) {
                             System.out.print("Select action: \nEnter 1 for Create " +
@@ -106,20 +99,16 @@ public class MenuAndDaoTo {
                         }
                     }
                 } else if (typeOfFile.equals("3")) {
-
                     if(!new File("cv.csv").isFile())
                     {
                         File f = new File("cv.csv");
-                       
                         if (f.createNewFile())
                             System.out.println("File created");
                         else
                             System.out.println("File already exists");
                     }
-
                     personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("cv.csv"));
                     while (flag) {
-
                             String typeOfAction = Dialog.crudMessages("Select action: \nEnter 1 for CRUD " +
                                     "\nEnter 2 for HELPERS \n ");
                         if (typeOfAction.equals("1")) {
@@ -156,13 +145,10 @@ public class MenuAndDaoTo {
                         else
                             System.out.println("File already exists");
                     }
-
                     personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("ya.yaml"));
-
                     while (flag) {
                         System.out.print("Select action: \nEnter 1 for CRUD " +
                                 "\nEnter 2 for HELPERS \n ");
-
                         String typeOfAction = scanner.next();
                         if (typeOfAction.equals("1")) {
                             System.out.print("Select action: \nEnter 1 for Create " +
@@ -195,7 +181,6 @@ public class MenuAndDaoTo {
                     safeForFile(typeOfFile);
                 }
             } catch (Exception e) {
-
                 System.out.println("Error) data is written to file");
                 safeForFile(typeOfFile);
             }
@@ -218,16 +203,12 @@ public class MenuAndDaoTo {
     public static void safeForFile(String fileName) {
         if (fileName.endsWith(".json")) {
             FileUtil.writeFile(new File("js.json"), false, TransferToFormat.toJSON(personStorage));
-
         } else if (fileName.endsWith(".xml")) {
             FileUtil.writeFile(new File("xm.xml"), false, TransferToFormat.toXml(personStorage));
-
         } else if (fileName.endsWith(".csv")) {
             FileUtil.writeFile(new File("cv.csv"), false, TransferToFormat.toCsv(personStorage));
-
         } else if (fileName.endsWith(".yaml")) {
             FileUtil.writeFile(new File("ya.yaml"), false, TransferToFormat.toYaml(personStorage));
-
         }
     }
 }

@@ -15,12 +15,10 @@ public class Dialog {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
     static StorageOfPersons personStorage;
-
     public static String crudMessages(String message){           //сюда позже залетим
         System.out.print(message);
                        String typeOfAction = scanner.next();
             return typeOfAction;
-
     }
 
     public static void crudMenu(String action, String fileName) {
@@ -38,11 +36,8 @@ public class Dialog {
                     scanner.next();
                 }
                 Integer ageScan = scanner.nextInt();
-
-
                 System.out.print("Enter your city: ");
                 String cityScan = scanner.next();
-
                 if (fileName.endsWith(".json")) {
                     personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
                     FileUtil.writeFile(new File("js.json"), false, TransferToFormat.toJSON(personStorage));
@@ -70,27 +65,20 @@ public class Dialog {
                     System.out.println("Person with this id doesn't exist");
                 } else {
                     System.out.println(person);
-
                     System.out.print("Enter new firstName: ");
                     String firstNameScan = scanner.next();
-
                     System.out.print("Enter new lastName: ");
                     String lastNameScan = scanner.next();
-
                     System.out.print("Enter new age: ");
                     while (!scanner.hasNextInt()) {
                         System.out.println("That not a number! Enter your age:");
                         scanner.next();
                     }
                     Integer ageScan = scanner.nextInt();
-
                     System.out.print("Enter new city: ");
                     String cityScan = scanner.next();
-
                     TransferToFormat.updatePerson(id, firstNameScan, lastNameScan, ageScan, cityScan, personStorage);
-
                     safeForFile(fileName);
-
                 }
                 break;
             }

@@ -8,18 +8,13 @@ import java.util.List;
 public class StorageOfPersons {
 
     private List<Person> persons;
-
     public StorageOfPersons(List<Person> person) {
-
         this.persons = new ArrayList<>(person);
     }
-
     public List<Person> getPersons() {
         return persons;
     }
-
     public void setPersons(List<Person> persons) {
-
         this.persons = persons;
     }
 

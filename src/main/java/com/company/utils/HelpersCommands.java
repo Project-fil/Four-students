@@ -17,7 +17,6 @@ public class HelpersCommands {
         }
         return null;
     }
-
     public static List<Person> getAllByCity(String city, StorageOfPersons personStorage) {
         List<Person> personList = personStorage.getPersons();
         List<Person> resultList = new ArrayList<>();
@@ -28,7 +27,6 @@ public class HelpersCommands {
         }
         return resultList;
     }
-
     public static List<Person> getAllByAge(Integer age, StorageOfPersons personStorage) {
         List<Person> personList = personStorage.getPersons();
         List<Person> resultList = new ArrayList<>();
@@ -39,7 +37,6 @@ public class HelpersCommands {
         }
         return resultList;
     }
-
     public static List<Person> getAllByFirstName(String firstName, StorageOfPersons personStorage) {
         List<Person> personList = personStorage.getPersons();
         List<Person> resultList = new ArrayList<>();
@@ -50,7 +47,6 @@ public class HelpersCommands {
         }
         return resultList;
     }
-
     public static List<Person> getAllByLastName(String lastName, StorageOfPersons personStorage) {
         List<Person> personList = personStorage.getPersons();
         List<Person> resultList = new ArrayList<>();
@@ -64,7 +60,6 @@ public class HelpersCommands {
         }
         return resultList;
     }
-
     public static void deleteAll(StorageOfPersons personStorage ) {
         List<Person> personList = personStorage.getPersons();
         personList.clear();

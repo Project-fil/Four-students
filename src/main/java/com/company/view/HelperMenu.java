@@ -9,9 +9,9 @@ public class HelperMenu {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
     static StorageOfPersons personStorage;
-
     public static void personAdd(String action, StorageOfPersons personStorage,
                                  String fileName) {
+
         switch (action) {
             case "1": {
                 System.out.println("Enter Id ");
@@ -37,7 +37,6 @@ public class HelperMenu {
                 System.out.println(HelpersCommands.getAllByFirstName(firstNameHelpers, personStorage));
                 break;
             }
-
             case "5": {
                 System.out.println("Enter LastName ");
                 String secondHelpers = scanner.next();

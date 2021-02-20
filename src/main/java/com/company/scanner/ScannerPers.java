@@ -7,7 +7,6 @@ import java.util.List;
 
 public class ScannerPers {
 
-
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
     public static Person createPerson(StorageOfPersons personStorage,
@@ -32,7 +31,3 @@ public class ScannerPers {
         return new Person(id, firstNameScan, lastNameScan, ageScan, cityScan);
     }
 }
-
-
-
-

@@ -7,7 +7,6 @@ public class FileUtil {
 
     public static String readFile(String path) {
         StringBuilder sb = new StringBuilder();
-
         FileReader fr = null;
         try {
             fr = new FileReader(path);
@@ -27,7 +26,6 @@ public class FileUtil {
         }
         return sb.toString();
     }
-
     public static void writeFile(File file, boolean arg, String sb) {
         try (FileWriter writer = new FileWriter(file, arg)) {
             writer.write(sb);
@@ -36,10 +34,8 @@ public class FileUtil {
             System.out.println(ex.getMessage());
         }
     }
-
     public static String getResultFromFile(String file) {
         String results = "";
-
         if (file.endsWith(".json")) {
             results = readFile(file).replace("[", "")
                     .replace("{", "")
