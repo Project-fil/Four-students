@@ -8,6 +8,7 @@ import com.company.utils.FileUtil;
 import com.company.utils.HelpersCommands;
 
 import java.io.File;
+import java.io.IOException;
 
 import static com.company.view.MenuAndDaoTo.safeForFile;
 
@@ -76,16 +77,29 @@ public class CrudDialog {
                         personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("ya.yaml"));
                         personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
                         FileUtil.writeFile(new File("ya.yaml"), false, TransferToFormat.toYaml(personStorage));
+                    } else if (fileName.endsWith(".bin")) {
+                        if (!new File("binary.bin").isFile()) {
+                            File f = new File("binary.bin");
+                            if (f.createNewFile())
+                                System.out.println("File created");
+                            else
+                                System.out.println("File already exists");
+                        }
+                        personStorage = new StorageOfPersons(TransferToFormat.getAllObjects("binary.bin"));
+                        personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+                        FileUtil.writeFile(new File("binary.bin"), false, TransferToFormat.toBinary(personStorage));
                     }
                     break;
                 }
-                case "2": {
-                    System.out.println(personStorage.getPersons());
+                    case "2": {
+
+                    System.out.println(new StorageOfPersons(TransferToFormat.getAllObjects(fileName)).getPersons());
                     break;
                 }
                 case "3": {
                     System.out.println("Enter Id for update");
                     Integer id = scanner.nextInt();
+                    personStorage = new StorageOfPersons(TransferToFormat.getAllObjects(fileName));
                     Person person = HelpersCommands.getById(id, personStorage);
                     if (person == null) {
                         System.out.println("Person with this id doesn't exist");
@@ -119,7 +133,7 @@ public class CrudDialog {
                     System.out.println("Wrong data");
                 }
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }

@@ -1,8 +1,9 @@
 package com.company.persons;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Person {
+public class Person implements Serializable {
 
     private String firstName;
     private String lastName;
@@ -18,9 +19,6 @@ public class Person {
     }
     public Integer getId() {
         return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
     }
     public String getFirstName() {
         return firstName;

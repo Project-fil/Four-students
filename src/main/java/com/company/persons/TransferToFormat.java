@@ -3,6 +3,7 @@ package com.company.persons;
 import com.company.StorageOfPersons;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import static com.company.utils.FileUtil.*;
 
@@ -103,6 +104,23 @@ public class TransferToFormat {
                     .append("\" \n");
         }
         return sb.toString();
+    }
+    public static String toBinary(StorageOfPersons personStorage) {
+        List<Person> personList = personStorage.getPersons();
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(bos);
+            oos.writeObject(personList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        byte[] bytes = bos.toByteArray();
+
+        return Arrays.toString(bytes);
+
     }
     public static List<Person> getAllObjects(String file) {
         String results = getResultFromFile(file);

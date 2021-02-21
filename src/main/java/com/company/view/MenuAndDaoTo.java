@@ -6,6 +6,7 @@ import com.company.StorageOfPersons;
 import com.company.utils.FileUtil;
 
 import java.io.File;
+import java.io.IOException;
 
 public class MenuAndDaoTo {
 
@@ -23,7 +24,7 @@ public class MenuAndDaoTo {
                     String fileTypes = scanner.next();
                     System.out.println(ShowMenu.menuCrud);
                     String crudChoose = scanner.next();
-                    CrudDialog.crudMenu(crudChoose, fileTypes);
+                    CrudDialog.crudMenu(crudChoose, getFileNameByTypeOfFile(fileTypes));
                 }
                   if (menuChoise.equals("2")) {
                    System.out.println(ShowMenu.menuHelpers);
@@ -34,6 +35,7 @@ public class MenuAndDaoTo {
                 }
             } catch (Exception e) {
                 System.out.println("Error) data is written to file");
+                System.out.println(e.getMessage());
                 safeForFile(menuChoise);
             }
         }
@@ -49,5 +51,23 @@ public class MenuAndDaoTo {
         } else if (fileName.endsWith(".yaml")) {
             FileUtil.writeFile(new File("ya.yaml"), false, TransferToFormat.toYaml(personStorage));
         }
+        else if (fileName.endsWith(".bin")) {
+            FileUtil.writeFile(new File("binary.bin"), false, TransferToFormat.toBinary(personStorage));
+        }
     }
+    private static String getFileNameByTypeOfFile(String typeOfFile) {
+        if (typeOfFile.equals("1")) {
+            return "js.json";
+        } else if (typeOfFile.equals("2")) {
+            return "xm.xml";
+        } else if (typeOfFile.equals("3")) {
+            return "cv.csv";
+        } else if (typeOfFile.equals("4")) {
+            return "ya.yaml";
+        } else if (typeOfFile.equals("5")) {
+            return "binary.bin";
+        }
+        return "";
+    }
+
 }
