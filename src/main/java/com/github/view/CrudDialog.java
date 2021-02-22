@@ -1,16 +1,14 @@
 package com.github.view;
 
 import com.github.persons.GetBy;
-import com.github.utils.CrudFormats;
 import com.github.persons.Person;
-import com.github.utils.ScannerPers;
 import com.github.persons.PersonsData;
 import com.github.persons.CleanerFile;
 
 import java.io.File;
 import java.io.IOException;
 
-import static com.github.utils.Menu.safeForFile;
+import static com.github.view.Menu.safeForFile;
 
 public class CrudDialog {
 
@@ -42,7 +40,7 @@ public class CrudDialog {
                                 System.out.println("File already exists");
                         }
                         personStorage = new PersonsData(CrudFormats.getAllObjects("js.json"));
-                        personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+                        personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
                         CleanerFile.writeFile(new File("js.json"), false, CrudFormats.toJSON(personStorage));
                     } else if (fileName.endsWith(".xml")) {
                         if (!new File("xm.xml").isFile()) {
@@ -53,7 +51,7 @@ public class CrudDialog {
                                 System.out.println("File already exists");
                         }
                         personStorage = new PersonsData(CrudFormats.getAllObjects("xm.xml"));
-                        personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+                        personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
                         CleanerFile.writeFile(new File("xm.xml"), false, CrudFormats.toXml(personStorage));
                     } else if (fileName.endsWith(".csv")) {
                         if (!new File("cv.csv").isFile()) {
@@ -64,7 +62,7 @@ public class CrudDialog {
                                 System.out.println("File already exists");
                         }
                         personStorage = new PersonsData(CrudFormats.getAllObjects("cv.csv"));
-                        personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+                        personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
                         CleanerFile.writeFile(new File("cv.csv"), false, CrudFormats.toCsv(personStorage));
                     } else if (fileName.endsWith(".yaml")) {
                         if (!new File("ya.yaml").isFile()) {
@@ -75,7 +73,7 @@ public class CrudDialog {
                                 System.out.println("File already exists");
                         }
                         personStorage = new PersonsData(CrudFormats.getAllObjects("ya.yaml"));
-                        personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+                        personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
                         CleanerFile.writeFile(new File("ya.yaml"), false, CrudFormats.toYaml(personStorage));
                     } else if (fileName.endsWith(".bin")) {
                         if (!new File("binary.bin").isFile()) {
@@ -86,7 +84,7 @@ public class CrudDialog {
                                 System.out.println("File already exists");
                         }
                         personStorage = new PersonsData(CrudFormats.getAllObjects("binary.bin"));
-                        personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+                        personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
                         CleanerFile.writeFile(new File("binary.bin"), false, CrudFormats.toBinary(personStorage));
                     }
                     break;

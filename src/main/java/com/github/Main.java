@@ -1,6 +1,6 @@
 package com.github;
 
-import com.github.utils.Menu;
+import com.github.view.Menu;
 
 public class Main {
 

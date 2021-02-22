@@ -2,7 +2,7 @@ package com.github.view;
 
 import com.github.persons.PersonsData;
 
-import static com.github.utils.Menu.showMenu;
+import static com.github.view.Menu.showMenu;
 
 public class HelperMenu {
 

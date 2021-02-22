@@ -1,4 +1,4 @@
-package com.github.utils;
+package com.github.view;
 
 import com.github.persons.Person;
 import com.github.persons.PersonsData;

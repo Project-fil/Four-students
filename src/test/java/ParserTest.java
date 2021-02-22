@@ -1,4 +1,4 @@
-import com.github.utils.CrudFormats;
+import com.github.view.CrudFormats;
 import com.github.persons.Person;
 import com.github.persons.PersonsData;
 import org.junit.Before;
