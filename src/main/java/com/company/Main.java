@@ -1,11 +1,11 @@
 package com.company;
 
-import com.company.view.MenuAndDaoTo;
+import com.company.utils.Menu;
 
 public class Main {
 
     public static void main(String[] args) {
-        try { MenuAndDaoTo.showMenu();
+        try { Menu.showMenu();
         } catch (Throwable t) {
             System.out.println("Restart Program");
         }

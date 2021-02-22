@@ -1,17 +1,16 @@
-package com.company.view;
+package com.company.utils;
 
-import com.company.adnhz.ShowMenu;
 import com.company.persons.TransferToFormat;
-import com.company.StorageOfPersons;
-import com.company.utils.FileUtil;
+import com.company.persons.PersonsData;
+import com.company.view.CrudDialog;
+import com.company.view.HelperMenu;
 
 import java.io.File;
-import java.io.IOException;
 
-public class MenuAndDaoTo {
+public class Menu {
 
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static StorageOfPersons personStorage;
+    static PersonsData personStorage;
 
     public static void showMenu() {
         boolean flagfor = true;

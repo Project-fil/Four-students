@@ -1,7 +1,7 @@
 package com.company.scanner;
 
 import com.company.persons.Person;
-import com.company.StorageOfPersons;
+import com.company.persons.PersonsData;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public class ScannerPers {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
-    public static Person createPerson(StorageOfPersons personStorage,
+    public static Person createPerson(PersonsData personStorage,
                                       String firstNameScan,
                                       String lastNameScan,
                                       Integer ageScan, String cityScan) {

@@ -1,6 +1,5 @@
 package com.company.persons;
 
-import com.company.StorageOfPersons;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +10,7 @@ public class TransferToFormat {
 
     private TransferToFormat() {
     }
-    public static String toJSON(StorageOfPersons personStorage) {
+    public static String toJSON(PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         File file = new File("js.json");
         StringBuffer sb = null;
@@ -41,7 +40,7 @@ public class TransferToFormat {
         }
         return sb.toString();
     }
-    public static String toXml(StorageOfPersons personStorage) {
+    public static String toXml(PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         File file = new File("xm.xml");
         StringBuffer sb = null;
@@ -64,7 +63,7 @@ public class TransferToFormat {
             sb.append("</Persons>\n");
         return sb.toString();
     }
-    public static String toCsv(StorageOfPersons personStorage) {
+    public static String toCsv(PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         File file = new File("cv.csv");
         StringBuffer sb = null;
@@ -83,7 +82,7 @@ public class TransferToFormat {
         }
         return sb.toString();
     }
-    public static String toYaml(StorageOfPersons personStorage) {
+    public static String toYaml(PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         File file = new File("ya.yaml");
         StringBuffer sb = null;
@@ -105,7 +104,7 @@ public class TransferToFormat {
         }
         return sb.toString();
     }
-    public static String toBinary(StorageOfPersons personStorage) {
+    public static String toBinary(PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream oos = null;
@@ -131,7 +130,7 @@ public class TransferToFormat {
         }
         return persons;
     }
-    public static void updatePerson(Integer id, String firstName, String lastName, Integer age, String city, StorageOfPersons personStorage) {
+    public static void updatePerson(Integer id, String firstName, String lastName, Integer age, String city, PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         for (Person person : personList) {
             if (person.getId().equals(id)) {
@@ -142,7 +141,7 @@ public class TransferToFormat {
             }
         }
     }
-    public static void deleteById(Integer id, StorageOfPersons personStorage) {
+    public static void deleteById(Integer id, PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         personList.removeIf(person -> person.getId().equals(id));
     }

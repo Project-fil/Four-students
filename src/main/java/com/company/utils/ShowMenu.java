@@ -1,4 +1,4 @@
-package com.company.adnhz;
+package com.company.utils;
 
 import java.util.Scanner;
 

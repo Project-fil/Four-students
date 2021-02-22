@@ -1,6 +1,6 @@
 import com.company.persons.TransferToFormat;
 import com.company.persons.Person;
-import com.company.StorageOfPersons;
+import com.company.persons.PersonsData;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,7 +21,7 @@ public class ParserTest {
     @Test
     public void toJSONTest() {
 
-        StorageOfPersons personStorage = new StorageOfPersons(personList);
+        PersonsData personStorage = new PersonsData(personList);
 
         String expected = "[\n" +
                 "{\n" +
@@ -40,7 +40,7 @@ public class ParserTest {
     @Test
     public void toXmlTest() {
 
-        StorageOfPersons personStorage = new StorageOfPersons(personList);
+        PersonsData personStorage = new PersonsData(personList);
         String expected = "<Persons>\n" +
                 " <Person>\n" +
                 " <id>1</id>\n" +
@@ -58,7 +58,7 @@ public class ParserTest {
     @Test
     public void toCvsTest() {
 
-        StorageOfPersons personStorage = new StorageOfPersons(personList);
+        PersonsData personStorage = new PersonsData(personList);
         String expected = "id,firstName,lastName,age,city \n" +
                 "1,lolo,wow,20,Kyiv \n";
 
@@ -69,7 +69,7 @@ public class ParserTest {
     @Test
     public void toYamlTest() {
 
-        StorageOfPersons personStorage = new StorageOfPersons(personList);
+        PersonsData personStorage = new PersonsData(personList);
         String expected = "---\n" +
                 "- \"id:1, firstName:lolo,lastName:wow,age:20,city:Kyiv\" \n";
 
@@ -91,7 +91,7 @@ public class ParserTest {
 
         List<Person> expected = new ArrayList<>();
         expected.add(new Person(0, "1", "2", 3, "4"));
-        StorageOfPersons personStorage = new StorageOfPersons(expected);
+        PersonsData personStorage = new PersonsData(expected);
         TransferToFormat.updatePerson(0, "3", "3", 3, "3", personStorage);
 
         List<Person> actual = new ArrayList<>();
@@ -104,7 +104,7 @@ public class ParserTest {
 
         List<Person> expected = new ArrayList<>();
         expected.add(new Person(0, "1", "2", 3, "4"));
-        StorageOfPersons personStorage = new StorageOfPersons(expected);
+        PersonsData personStorage = new PersonsData(expected);
         TransferToFormat.deleteById(0, personStorage);
 
         List<Person> actual = new ArrayList<>();

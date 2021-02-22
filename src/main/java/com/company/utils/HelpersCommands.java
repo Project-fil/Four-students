@@ -1,14 +1,14 @@
 package com.company.utils;
 
 import com.company.persons.Person;
-import com.company.StorageOfPersons;
+import com.company.persons.PersonsData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HelpersCommands {
 
-    public static Person getById(Integer id, StorageOfPersons personStorage) {
+    public static Person getById(Integer id, PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         for (Person person : personList) {
             if (person.getId().equals(id)) {
@@ -17,7 +17,7 @@ public class HelpersCommands {
         }
         return null;
     }
-    public static List<Person> getAllByCity(String city, StorageOfPersons personStorage) {
+    public static List<Person> getAllByCity(String city, PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         List<Person> resultList = new ArrayList<>();
         for (Person person : personList) {
@@ -27,7 +27,7 @@ public class HelpersCommands {
         }
         return resultList;
     }
-    public static List<Person> getAllByAge(Integer age, StorageOfPersons personStorage) {
+    public static List<Person> getAllByAge(Integer age, PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         List<Person> resultList = new ArrayList<>();
         for (Person person : personList) {
@@ -37,7 +37,7 @@ public class HelpersCommands {
         }
         return resultList;
     }
-    public static List<Person> getAllByFirstName(String firstName, StorageOfPersons personStorage) {
+    public static List<Person> getAllByFirstName(String firstName, PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         List<Person> resultList = new ArrayList<>();
         for (Person person : personList) {
@@ -47,7 +47,7 @@ public class HelpersCommands {
         }
         return resultList;
     }
-    public static List<Person> getAllByLastName(String lastName, StorageOfPersons personStorage) {
+    public static List<Person> getAllByLastName(String lastName, PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();
         List<Person> resultList = new ArrayList<>();
         for (Person person : personList) {
@@ -60,7 +60,7 @@ public class HelpersCommands {
         }
         return resultList;
     }
-    public static void deleteAll(StorageOfPersons personStorage ) {
+    public static void deleteAll(PersonsData personStorage ) {
         List<Person> personList = personStorage.getPersons();
         personList.clear();
     }

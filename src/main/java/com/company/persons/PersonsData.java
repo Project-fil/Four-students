@@ -1,13 +1,13 @@
-package com.company;
+package com.company.persons;
 
 import com.company.persons.Person;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StorageOfPersons {
+public class PersonsData {
 
     private List<Person> persons;
-    public StorageOfPersons(List<Person> person) {
+    public PersonsData(List<Person> person) {
         this.persons = new ArrayList<>(person);
     }
     public List<Person> getPersons() {

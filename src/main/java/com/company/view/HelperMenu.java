@@ -1,15 +1,13 @@
 package com.company.view;
 
-import com.company.StorageOfPersons;
-import com.company.utils.HelpersCommands;
+import com.company.persons.PersonsData;
 
-import static com.company.view.MenuAndDaoTo.safeForFile;
-import static com.company.view.MenuAndDaoTo.showMenu;
+import static com.company.utils.Menu.showMenu;
 
 public class HelperMenu {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static StorageOfPersons personStorage;
+    static PersonsData personStorage;
     public static void helpersMethot(String action) {
 
         switch (action) {
