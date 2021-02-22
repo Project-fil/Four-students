@@ -1,7 +1,9 @@
 package com.github.view;
 
-import com.github.persons.CleanerFile;
+import com.github.view.formatsview.CleanerFile;
 import com.github.persons.PersonsData;
+import com.github.view.cruud.CrudDialog;
+import com.github.view.formats.CrudFormats;
 
 import java.io.File;
 

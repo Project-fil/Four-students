@@ -1,4 +1,4 @@
-package com.github.persons;
+package com.github.view.formatsview;
 
 import java.io.*;
 import java.util.Scanner;

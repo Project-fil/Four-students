@@ -1,4 +1,4 @@
-import com.github.persons.CleanerFile;
+import com.github.view.formatsview.CleanerFile;
 import org.junit.Assert;
 import org.junit.Test;
 

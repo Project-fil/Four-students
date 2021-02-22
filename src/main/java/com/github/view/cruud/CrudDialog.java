@@ -1,9 +1,11 @@
-package com.github.view;
+package com.github.view.cruud;
 
 import com.github.persons.GetBy;
 import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
-import com.github.persons.CleanerFile;
+import com.github.view.formatsview.CleanerFile;
+import com.github.view.formats.CrudFormats;
+import com.github.view.Scanner;
 
 import java.io.File;
 import java.io.IOException;
