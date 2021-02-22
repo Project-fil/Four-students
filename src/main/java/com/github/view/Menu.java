@@ -1,9 +1,9 @@
 package com.github.view;
 
+import com.github.view.formats.formatssss.*;
 import com.github.view.formatsview.CleanerFile;
 import com.github.persons.PersonsData;
 import com.github.view.cruud.CrudDialog;
-import com.github.view.formats.CrudFormats;
 
 import java.io.File;
 
@@ -42,16 +42,16 @@ public class Menu {
 
     public static void safeForFile(String fileName) {
         if (fileName.endsWith(".json")) {
-            CleanerFile.writeFile(new File("js.json"), false, CrudFormats.toJSON(personStorage));
+            CleanerFile.writeFile(new File("js.json"), false, FormatJson.toJSON(personStorage));
         } else if (fileName.endsWith(".xml")) {
-            CleanerFile.writeFile(new File("xm.xml"), false, CrudFormats.toXml(personStorage));
+            CleanerFile.writeFile(new File("xm.xml"), false, FormatXml.toXml(personStorage));
         } else if (fileName.endsWith(".csv")) {
-            CleanerFile.writeFile(new File("cv.csv"), false, CrudFormats.toCsv(personStorage));
+            CleanerFile.writeFile(new File("cv.csv"), false, FormasCsv.toCsv(personStorage));
         } else if (fileName.endsWith(".yaml")) {
-            CleanerFile.writeFile(new File("ya.yaml"), false, CrudFormats.toYaml(personStorage));
+            CleanerFile.writeFile(new File("ya.yaml"), false, FormatYaml.toYaml(personStorage));
         }
         else if (fileName.endsWith(".bin")) {
-            CleanerFile.writeFile(new File("binary.bin"), false, CrudFormats.toBinary(personStorage));
+            CleanerFile.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
         }
     }
     private static String getFileNameByTypeOfFile(String typeOfFile) {
