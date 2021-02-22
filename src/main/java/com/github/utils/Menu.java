@@ -1,9 +1,9 @@
-package com.company.utils;
+package com.github.utils;
 
-import com.company.persons.CleanerFile;
-import com.company.persons.PersonsData;
-import com.company.view.CrudDialog;
-import com.company.view.HelperMenu;
+import com.github.persons.CleanerFile;
+import com.github.persons.PersonsData;
+import com.github.view.CrudDialog;
+import com.github.view.HelperMenu;
 
 import java.io.File;
 

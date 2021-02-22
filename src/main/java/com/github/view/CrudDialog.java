@@ -1,16 +1,16 @@
-package com.company.view;
+package com.github.view;
 
-import com.company.persons.GetBy;
-import com.company.utils.CrudFormats;
-import com.company.persons.Person;
-import com.company.utils.ScannerPers;
-import com.company.persons.PersonsData;
-import com.company.persons.CleanerFile;
+import com.github.persons.GetBy;
+import com.github.utils.CrudFormats;
+import com.github.persons.Person;
+import com.github.utils.ScannerPers;
+import com.github.persons.PersonsData;
+import com.github.persons.CleanerFile;
 
 import java.io.File;
 import java.io.IOException;
 
-import static com.company.utils.Menu.safeForFile;
+import static com.github.utils.Menu.safeForFile;
 
 public class CrudDialog {
 

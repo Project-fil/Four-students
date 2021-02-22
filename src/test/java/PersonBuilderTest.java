@@ -1,6 +1,6 @@
-import com.company.persons.Person;
-import com.company.utils.ScannerPers;
-import com.company.persons.PersonsData;
+import com.github.persons.Person;
+import com.github.utils.ScannerPers;
+import com.github.persons.PersonsData;
 import org.junit.Test;
 
 import java.util.ArrayList;

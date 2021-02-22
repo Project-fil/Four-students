@@ -1,4 +1,4 @@
-import com.company.persons.CleanerFile;
+import com.github.persons.CleanerFile;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
-package com.company;
+package com.github;
 
-import com.company.utils.Menu;
+import com.github.utils.Menu;
 
 public class Main {
 

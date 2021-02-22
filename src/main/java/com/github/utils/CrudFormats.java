@@ -1,13 +1,13 @@
-package com.company.utils;
+package com.github.utils;
 
-import com.company.persons.Person;
-import com.company.persons.PersonsData;
+import com.github.persons.Person;
+import com.github.persons.PersonsData;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import static com.company.persons.CleanerFile.*;
+import static com.github.persons.CleanerFile.*;
 
 public class CrudFormats {
 

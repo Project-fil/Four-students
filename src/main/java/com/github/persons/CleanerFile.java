@@ -1,4 +1,4 @@
-package com.company.persons;
+package com.github.persons;
 
 import java.io.*;
 import java.util.Scanner;

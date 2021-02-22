@@ -1,7 +1,7 @@
-package com.company.utils;
+package com.github.utils;
 
-import com.company.persons.Person;
-import com.company.persons.PersonsData;
+import com.github.persons.Person;
+import com.github.persons.PersonsData;
 
 import java.util.List;
 

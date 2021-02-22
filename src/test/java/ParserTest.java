@@ -1,6 +1,6 @@
-import com.company.utils.CrudFormats;
-import com.company.persons.Person;
-import com.company.persons.PersonsData;
+import com.github.utils.CrudFormats;
+import com.github.persons.Person;
+import com.github.persons.PersonsData;
 import org.junit.Before;
 import org.junit.Test;
 
