@@ -9,6 +9,7 @@ import com.github.view.daoformats.formatssss.*;
 import com.github.view.formatsview.CleanerFile;
 import com.github.view.daoformats.SearchAndDeletePersonById;
 import com.github.view.Scanner;
+import com.github.view.formatsview.Filewrite;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,7 +47,7 @@ public class CrudDialog {
                         }
                         personStorage = new PersonsData(SearchObject.getAllObjects("js.json"));
                         personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        CleanerFile.writeFile(new File("js.json"), false, FormatJson.toJSON(personStorage));
+                        Filewrite.writeFile(new File("js.json"), false, FormatJson.toJSON(personStorage));
                     } else if (fileName.endsWith(".xml")) {
                         if (!new File("xm.xml").isFile()) {
                             File f = new File("xm.xml");
@@ -57,7 +58,7 @@ public class CrudDialog {
                         }
                         personStorage = new PersonsData(SearchObject.getAllObjects("xm.xml"));
                         personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        CleanerFile.writeFile(new File("xm.xml"), false, FormatXml.toXml(personStorage));
+                        Filewrite.writeFile(new File("xm.xml"), false, FormatXml.toXml(personStorage));
                     } else if (fileName.endsWith(".csv")) {
                         if (!new File("cv.csv").isFile()) {
                             File f = new File("cv.csv");
@@ -68,7 +69,7 @@ public class CrudDialog {
                         }
                         personStorage = new PersonsData(SearchObject.getAllObjects("cv.csv"));
                         personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        CleanerFile.writeFile(new File("cv.csv"), false, FormasCsv.toCsv(personStorage));
+                        Filewrite.writeFile(new File("cv.csv"), false, FormasCsv.toCsv(personStorage));
                     } else if (fileName.endsWith(".yaml")) {
                         if (!new File("ya.yaml").isFile()) {
                             File f = new File("ya.yaml");
@@ -79,7 +80,7 @@ public class CrudDialog {
                         }
                         personStorage = new PersonsData(SearchObject.getAllObjects("ya.yaml"));
                         personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        CleanerFile.writeFile(new File("ya.yaml"), false, FormatYaml.toYaml(personStorage));
+                        Filewrite.writeFile(new File("ya.yaml"), false, FormatYaml.toYaml(personStorage));
                     } else if (fileName.endsWith(".bin")) {
                         if (!new File("binary.bin").isFile()) {
                             File f = new File("binary.bin");
@@ -90,7 +91,7 @@ public class CrudDialog {
                         }
                         personStorage = new PersonsData(SearchObject.getAllObjects("binary.bin"));
                         personStorage.getPersons().add(Scanner.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        CleanerFile.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
+                        Filewrite.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
                     }
                     break;
                 }
