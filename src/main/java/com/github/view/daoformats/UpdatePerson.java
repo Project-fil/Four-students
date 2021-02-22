@@ -2,7 +2,6 @@ package com.github.view.daoformats;
 
 import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
-
 import java.util.List;
 
 public class UpdatePerson {

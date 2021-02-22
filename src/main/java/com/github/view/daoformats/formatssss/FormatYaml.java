@@ -2,7 +2,6 @@ package com.github.view.daoformats.formatssss;
 
 import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
-
 import java.io.File;
 import java.util.List;
 
