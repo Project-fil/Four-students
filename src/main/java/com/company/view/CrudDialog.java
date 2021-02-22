@@ -5,7 +5,6 @@ import com.company.persons.Person;
 import com.company.utils.ScannerPers;
 import com.company.persons.PersonsData;
 import com.company.persons.CleanerFile;
-import com.company.utils.HelpersCommands;
 
 import java.io.File;
 import java.io.IOException;
@@ -100,7 +99,7 @@ public class CrudDialog {
                     System.out.println("Enter Id for update");
                     Integer id = scanner.nextInt();
                     personStorage = new PersonsData(CrudFormats.getAllObjects(fileName));
-                    Person person = HelpersCommands.getById(id, personStorage);
+                    Person person = GetBy.getById(id, personStorage);
                     if (person == null) {
                         System.out.println("Person with this id doesn't exist");
                     } else {
