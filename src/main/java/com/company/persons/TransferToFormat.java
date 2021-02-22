@@ -107,7 +107,6 @@ public class TransferToFormat {
     }
     public static String toBinary(StorageOfPersons personStorage) {
         List<Person> personList = personStorage.getPersons();
-
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream oos = null;
         try {
@@ -116,11 +115,8 @@ public class TransferToFormat {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         byte[] bytes = bos.toByteArray();
-
         return Arrays.toString(bytes);
-
     }
     public static List<Person> getAllObjects(String file) {
         String results = getResultFromFile(file);
