@@ -1,14 +1,17 @@
-package com.company.persons;
+package com.company.utils;
+
+import com.company.persons.Person;
+import com.company.persons.PersonsData;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import static com.company.utils.FileUtil.*;
+import static com.company.persons.CleanerFile.*;
 
-public class TransferToFormat {
+public class CrudFormats {
 
-    private TransferToFormat() {
+    private CrudFormats() {
     }
     public static String toJSON(PersonsData personStorage) {
         List<Person> personList = personStorage.getPersons();

@@ -1,4 +1,4 @@
-import com.company.utils.FileUtil;
+import com.company.persons.CleanerFile;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class FileUtilTest {
     public void readFileTest() {
         String expected = "123456";
 
-        String actual = FileUtil.readFile("./fileTest/fileTest.txt");
+        String actual = CleanerFile.readFile("./fileTest/fileTest.txt");
 
         assertEquals(expected, actual);
 
@@ -23,10 +23,10 @@ public class FileUtilTest {
 
         String data = "123456";
 
-        FileUtil.writeFile(new File("./fileTest/fileTest2.txt"),
+        CleanerFile.writeFile(new File("./fileTest/fileTest2.txt"),
                 false, data);
 
-        String actual = FileUtil.readFile("./fileTest/fileTest2.txt");
+        String actual = CleanerFile.readFile("./fileTest/fileTest2.txt");
 
         assertEquals(data, actual);
 
@@ -36,7 +36,7 @@ public class FileUtilTest {
     public void getResultFromFileTest() {
         String data = "0 1 2 3 4";
 
-        String actual = FileUtil.getResultFromFile("./fileTest/jsTest.json");
+        String actual = CleanerFile.getResultFromFile("./fileTest/jsTest.json");
 
         assertEquals(data, actual);
     }

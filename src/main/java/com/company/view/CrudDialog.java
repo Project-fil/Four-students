@@ -1,10 +1,10 @@
 package com.company.view;
 
-import com.company.persons.TransferToFormat;
+import com.company.utils.CrudFormats;
 import com.company.persons.Person;
-import com.company.scanner.ScannerPers;
+import com.company.utils.ScannerPers;
 import com.company.persons.PersonsData;
-import com.company.utils.FileUtil;
+import com.company.persons.CleanerFile;
 import com.company.utils.HelpersCommands;
 
 import java.io.File;
@@ -41,9 +41,9 @@ public class CrudDialog {
                             else
                                 System.out.println("File already exists");
                         }
-                        personStorage = new PersonsData(TransferToFormat.getAllObjects("js.json"));
+                        personStorage = new PersonsData(CrudFormats.getAllObjects("js.json"));
                         personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        FileUtil.writeFile(new File("js.json"), false, TransferToFormat.toJSON(personStorage));
+                        CleanerFile.writeFile(new File("js.json"), false, CrudFormats.toJSON(personStorage));
                     } else if (fileName.endsWith(".xml")) {
                         if (!new File("xm.xml").isFile()) {
                             File f = new File("xm.xml");
@@ -52,9 +52,9 @@ public class CrudDialog {
                             else
                                 System.out.println("File already exists");
                         }
-                        personStorage = new PersonsData(TransferToFormat.getAllObjects("xm.xml"));
+                        personStorage = new PersonsData(CrudFormats.getAllObjects("xm.xml"));
                         personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        FileUtil.writeFile(new File("xm.xml"), false, TransferToFormat.toXml(personStorage));
+                        CleanerFile.writeFile(new File("xm.xml"), false, CrudFormats.toXml(personStorage));
                     } else if (fileName.endsWith(".csv")) {
                         if (!new File("cv.csv").isFile()) {
                             File f = new File("cv.csv");
@@ -63,9 +63,9 @@ public class CrudDialog {
                             else
                                 System.out.println("File already exists");
                         }
-                        personStorage = new PersonsData(TransferToFormat.getAllObjects("cv.csv"));
+                        personStorage = new PersonsData(CrudFormats.getAllObjects("cv.csv"));
                         personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        FileUtil.writeFile(new File("cv.csv"), false, TransferToFormat.toCsv(personStorage));
+                        CleanerFile.writeFile(new File("cv.csv"), false, CrudFormats.toCsv(personStorage));
                     } else if (fileName.endsWith(".yaml")) {
                         if (!new File("ya.yaml").isFile()) {
                             File f = new File("ya.yaml");
@@ -74,9 +74,9 @@ public class CrudDialog {
                             else
                                 System.out.println("File already exists");
                         }
-                        personStorage = new PersonsData(TransferToFormat.getAllObjects("ya.yaml"));
+                        personStorage = new PersonsData(CrudFormats.getAllObjects("ya.yaml"));
                         personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        FileUtil.writeFile(new File("ya.yaml"), false, TransferToFormat.toYaml(personStorage));
+                        CleanerFile.writeFile(new File("ya.yaml"), false, CrudFormats.toYaml(personStorage));
                     } else if (fileName.endsWith(".bin")) {
                         if (!new File("binary.bin").isFile()) {
                             File f = new File("binary.bin");
@@ -85,21 +85,21 @@ public class CrudDialog {
                             else
                                 System.out.println("File already exists");
                         }
-                        personStorage = new PersonsData(TransferToFormat.getAllObjects("binary.bin"));
+                        personStorage = new PersonsData(CrudFormats.getAllObjects("binary.bin"));
                         personStorage.getPersons().add(ScannerPers.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-                        FileUtil.writeFile(new File("binary.bin"), false, TransferToFormat.toBinary(personStorage));
+                        CleanerFile.writeFile(new File("binary.bin"), false, CrudFormats.toBinary(personStorage));
                     }
                     break;
                 }
                     case "2": {
 
-                    System.out.println(new PersonsData(TransferToFormat.getAllObjects(fileName)).getPersons());
+                    System.out.println(new PersonsData(CrudFormats.getAllObjects(fileName)).getPersons());
                     break;
                 }
                 case "3": {
                     System.out.println("Enter Id for update");
                     Integer id = scanner.nextInt();
-                    personStorage = new PersonsData(TransferToFormat.getAllObjects(fileName));
+                    personStorage = new PersonsData(CrudFormats.getAllObjects(fileName));
                     Person person = HelpersCommands.getById(id, personStorage);
                     if (person == null) {
                         System.out.println("Person with this id doesn't exist");
@@ -117,7 +117,7 @@ public class CrudDialog {
                         Integer ageScan = scanner.nextInt();
                         System.out.print("Enter new city: ");
                         String cityScan = scanner.next();
-                        TransferToFormat.updatePerson(id, firstNameScan, lastNameScan, ageScan, cityScan, personStorage);
+                        CrudFormats.updatePerson(id, firstNameScan, lastNameScan, ageScan, cityScan, personStorage);
                         safeForFile(fileName);
                     }
                     break;
@@ -125,7 +125,7 @@ public class CrudDialog {
                 case "4": {
                     System.out.println("Enter Id for delete");
                     Integer id = scanner.nextInt();
-                    TransferToFormat.deleteById(id, personStorage);
+                    CrudFormats.deleteById(id, personStorage);
                     safeForFile(fileName);
                     break;
                 }

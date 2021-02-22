@@ -1,7 +1,7 @@
 import com.company.persons.PersonsData;
-import com.company.persons.TransferToFormat;
+import com.company.utils.CrudFormats;
 import com.company.persons.Person;
-import com.company.utils.FileUtil;
+import com.company.persons.CleanerFile;
 import com.company.utils.HelpersCommands;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +33,7 @@ public class HelperTest {
                 "wow", 20, "Kyiv");
         personList.add(person);
         personStorage = new PersonsData(personList);
-        FileUtil.writeFile(new File("jsTest2.json"), false, TransferToFormat.toJSON(personStorage));
+        CleanerFile.writeFile(new File("jsTest2.json"), false, CrudFormats.toJSON(personStorage));
     }
 
     @Test

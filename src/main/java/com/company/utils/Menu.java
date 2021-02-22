@@ -1,6 +1,6 @@
 package com.company.utils;
 
-import com.company.persons.TransferToFormat;
+import com.company.persons.CleanerFile;
 import com.company.persons.PersonsData;
 import com.company.view.CrudDialog;
 import com.company.view.HelperMenu;
@@ -42,16 +42,16 @@ public class Menu {
 
     public static void safeForFile(String fileName) {
         if (fileName.endsWith(".json")) {
-            FileUtil.writeFile(new File("js.json"), false, TransferToFormat.toJSON(personStorage));
+            CleanerFile.writeFile(new File("js.json"), false, CrudFormats.toJSON(personStorage));
         } else if (fileName.endsWith(".xml")) {
-            FileUtil.writeFile(new File("xm.xml"), false, TransferToFormat.toXml(personStorage));
+            CleanerFile.writeFile(new File("xm.xml"), false, CrudFormats.toXml(personStorage));
         } else if (fileName.endsWith(".csv")) {
-            FileUtil.writeFile(new File("cv.csv"), false, TransferToFormat.toCsv(personStorage));
+            CleanerFile.writeFile(new File("cv.csv"), false, CrudFormats.toCsv(personStorage));
         } else if (fileName.endsWith(".yaml")) {
-            FileUtil.writeFile(new File("ya.yaml"), false, TransferToFormat.toYaml(personStorage));
+            CleanerFile.writeFile(new File("ya.yaml"), false, CrudFormats.toYaml(personStorage));
         }
         else if (fileName.endsWith(".bin")) {
-            FileUtil.writeFile(new File("binary.bin"), false, TransferToFormat.toBinary(personStorage));
+            CleanerFile.writeFile(new File("binary.bin"), false, CrudFormats.toBinary(personStorage));
         }
     }
     private static String getFileNameByTypeOfFile(String typeOfFile) {

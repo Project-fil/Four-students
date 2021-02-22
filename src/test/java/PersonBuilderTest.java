@@ -1,5 +1,5 @@
 import com.company.persons.Person;
-import com.company.scanner.ScannerPers;
+import com.company.utils.ScannerPers;
 import com.company.persons.PersonsData;
 import org.junit.Test;
 

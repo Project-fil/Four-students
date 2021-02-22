@@ -1,4 +1,4 @@
-package com.company.scanner;
+package com.company.utils;
 
 import com.company.persons.Person;
 import com.company.persons.PersonsData;

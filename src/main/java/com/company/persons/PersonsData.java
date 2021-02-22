@@ -1,6 +1,5 @@
 package com.company.persons;
 
-import com.company.persons.Person;
 import java.util.ArrayList;
 import java.util.List;
 

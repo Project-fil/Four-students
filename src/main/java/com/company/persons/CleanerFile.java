@@ -1,9 +1,9 @@
-package com.company.utils;
+package com.company.persons;
 
 import java.io.*;
 import java.util.Scanner;
 
-public class FileUtil {
+public class CleanerFile {
 
     public static String readFile(String path) {
         StringBuilder sb = new StringBuilder();

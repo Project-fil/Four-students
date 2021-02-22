@@ -1,4 +1,4 @@
-import com.company.persons.TransferToFormat;
+import com.company.utils.CrudFormats;
 import com.company.persons.Person;
 import com.company.persons.PersonsData;
 import org.junit.Before;
@@ -33,7 +33,7 @@ public class ParserTest {
                 " }\n" +
                 "]";
 
-        String result = TransferToFormat.toJSON(personStorage);
+        String result = CrudFormats.toJSON(personStorage);
         assertEquals(expected, result);
     }
 
@@ -51,7 +51,7 @@ public class ParserTest {
                 " </Person>\n" +
                 "</Persons>\n";
 
-        String result = TransferToFormat.toXml(personStorage);
+        String result = CrudFormats.toXml(personStorage);
         assertEquals(expected, result);
     }
 
@@ -62,7 +62,7 @@ public class ParserTest {
         String expected = "id,firstName,lastName,age,city \n" +
                 "1,lolo,wow,20,Kyiv \n";
 
-        String result = TransferToFormat.toCsv(personStorage);
+        String result = CrudFormats.toCsv(personStorage);
         assertEquals(expected, result);
     }
 
@@ -73,7 +73,7 @@ public class ParserTest {
         String expected = "---\n" +
                 "- \"id:1, firstName:lolo,lastName:wow,age:20,city:Kyiv\" \n";
 
-        String result = TransferToFormat.toYaml(personStorage);
+        String result = CrudFormats.toYaml(personStorage);
         assertEquals(expected, result);
     }
 
@@ -82,7 +82,7 @@ public class ParserTest {
 
         List<Person> data = new ArrayList<>();
         data.add(new Person(0, "1", "2", 3, "4"));
-        List<Person> actual = TransferToFormat.getAllObjects("./fileTest/jsTest.json");
+        List<Person> actual = CrudFormats.getAllObjects("./fileTest/jsTest.json");
         assertEquals(data, actual);
     }
 
@@ -92,7 +92,7 @@ public class ParserTest {
         List<Person> expected = new ArrayList<>();
         expected.add(new Person(0, "1", "2", 3, "4"));
         PersonsData personStorage = new PersonsData(expected);
-        TransferToFormat.updatePerson(0, "3", "3", 3, "3", personStorage);
+        CrudFormats.updatePerson(0, "3", "3", 3, "3", personStorage);
 
         List<Person> actual = new ArrayList<>();
         actual.add(new Person(0, "3", "3", 3, "3"));
@@ -105,7 +105,7 @@ public class ParserTest {
         List<Person> expected = new ArrayList<>();
         expected.add(new Person(0, "1", "2", 3, "4"));
         PersonsData personStorage = new PersonsData(expected);
-        TransferToFormat.deleteById(0, personStorage);
+        CrudFormats.deleteById(0, personStorage);
 
         List<Person> actual = new ArrayList<>();
         assertEquals(personStorage.getPersons(), actual);
