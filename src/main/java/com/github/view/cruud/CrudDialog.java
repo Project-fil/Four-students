@@ -128,6 +128,7 @@ public class CrudDialog {
                 case "4": {
                     System.out.println("Enter Id for delete");
                     Integer id = scanner.nextInt();
+                    personStorage = new PersonsData(SearchObject.getAllObjects(fileName));
                     SearchAndDeletePersonById.deleteById(id, personStorage);
                     safeForFile(fileName);
                     break;
