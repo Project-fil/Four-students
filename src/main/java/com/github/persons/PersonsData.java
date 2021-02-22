@@ -5,14 +5,14 @@ import java.util.List;
 
 public class PersonsData {
 
-    private List<Person> persons;
-    public PersonsData(List<Person> person) {
+    private List<Peoples> persons;
+    public PersonsData(List<Peoples> person) {
         this.persons = new ArrayList<>(person);
     }
-    public List<Person> getPersons() {
+    public List<Peoples> getPersons() {
         return persons;
     }
-    public void setPersons(List<Person> persons) {
+    public void setPersons(List<Peoples> persons) {
         this.persons = persons;
     }
 

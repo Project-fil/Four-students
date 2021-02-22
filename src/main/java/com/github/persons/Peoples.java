@@ -3,14 +3,14 @@ package com.github.persons;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Person implements Serializable {
+public class Peoples implements Serializable {
 
     private String firstName;
     private String lastName;
     private Integer age;
     private String city;
     private Integer id;
-    public Person(Integer id, String firstName, String lastName, Integer age, String city) {
+    public Peoples(Integer id, String firstName, String lastName, Integer age, String city) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -49,7 +49,7 @@ public class Person implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
+        Peoples person = (Peoples) o;
         return Objects.equals(firstName, person.firstName) &&
                 Objects.equals(lastName, person.lastName) &&
                 Objects.equals(age, person.age) &&

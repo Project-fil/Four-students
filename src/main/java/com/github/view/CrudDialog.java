@@ -1,7 +1,7 @@
 package com.github.view;
 
 import com.github.persons.GetBy;
-import com.github.persons.Person;
+import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
 import com.github.persons.CleanerFile;
 
@@ -98,7 +98,7 @@ public class CrudDialog {
                     System.out.println("Enter Id for update");
                     Integer id = scanner.nextInt();
                     personStorage = new PersonsData(CrudFormats.getAllObjects(fileName));
-                    Person person = GetBy.getById(id, personStorage);
+                    Peoples person = GetBy.getById(id, personStorage);
                     if (person == null) {
                         System.out.println("Person with this id doesn't exist");
                     } else {

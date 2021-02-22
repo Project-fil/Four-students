@@ -1,6 +1,6 @@
 package com.github.view;
 
-import com.github.persons.Person;
+import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
 
 import java.io.*;
@@ -14,7 +14,7 @@ public class CrudFormats {
     private CrudFormats() {
     }
     public static String toJSON(PersonsData personStorage) {
-        List<Person> personList = personStorage.getPersons();
+        List<Peoples> personList = personStorage.getPersons();
         File file = new File("js.json");
         StringBuffer sb = null;
         if (personList.isEmpty())
@@ -23,7 +23,7 @@ public class CrudFormats {
             sb = new StringBuffer("[\n");
         }
         int count = 0;
-        for (Person person : personList)
+        for (Peoples person : personList)
         {
             sb.append("{\n");
             sb.append(" \"id\":").append(person.getId()).append(",\n");
@@ -44,7 +44,7 @@ public class CrudFormats {
         return sb.toString();
     }
     public static String toXml(PersonsData personStorage) {
-        List<Person> personList = personStorage.getPersons();
+        List<Peoples> personList = personStorage.getPersons();
         File file = new File("xm.xml");
         StringBuffer sb = null;
         if (personList.isEmpty()) {
@@ -52,7 +52,7 @@ public class CrudFormats {
         } else {
             sb = new StringBuffer("<Persons>\n");
         }
-        for (Person person : personList
+        for (Peoples person : personList
         ) {
             sb.append(" <Person>\n");
             sb.append(" <id>").append(person.getId()).append("</id>\n");
@@ -67,7 +67,7 @@ public class CrudFormats {
         return sb.toString();
     }
     public static String toCsv(PersonsData personStorage) {
-        List<Person> personList = personStorage.getPersons();
+        List<Peoples> personList = personStorage.getPersons();
         File file = new File("cv.csv");
         StringBuffer sb = null;
         if (personList.isEmpty()) {
@@ -75,7 +75,7 @@ public class CrudFormats {
         } else {
             sb = new StringBuffer("id,firstName,lastName,age,city \n");
         }
-        for (Person person : personList
+        for (Peoples person : personList
         ) {
             sb.append(person.getId()).append(",")
                     .append(person.getFirstName()).append(",")
@@ -86,7 +86,7 @@ public class CrudFormats {
         return sb.toString();
     }
     public static String toYaml(PersonsData personStorage) {
-        List<Person> personList = personStorage.getPersons();
+        List<Peoples> personList = personStorage.getPersons();
         File file = new File("ya.yaml");
         StringBuffer sb = null;
         if (personList.isEmpty()) {
@@ -94,7 +94,7 @@ public class CrudFormats {
         } else {
             sb = new StringBuffer("---\n");
         }
-        for (Person person : personList
+        for (Peoples person : personList
         ) {
             sb.append("- ")
                     .append("\"id:").append(person.getId())
@@ -108,7 +108,7 @@ public class CrudFormats {
         return sb.toString();
     }
     public static String toBinary(PersonsData personStorage) {
-        List<Person> personList = personStorage.getPersons();
+        List<Peoples> personList = personStorage.getPersons();
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream oos = null;
         try {
@@ -120,13 +120,13 @@ public class CrudFormats {
         byte[] bytes = bos.toByteArray();
         return Arrays.toString(bytes);
     }
-    public static List<Person> getAllObjects(String file) {
+    public static List<Peoples> getAllObjects(String file) {
         String results = getResultFromFile(file);
-        List<Person> persons = new ArrayList<>();
+        List<Peoples> persons = new ArrayList<>();
         if (!results.equals("")) {
             String[] arr = results.split(" ");
             for (int i = 0; i < arr.length; i = i + 5) {
-                persons.add(new Person(Integer.parseInt(arr[i]),
+                persons.add(new Peoples(Integer.parseInt(arr[i]),
                         arr[i + 1], arr[i + 2], Integer.parseInt(arr[i + 3]),
                         arr[i + 4]));
             }
@@ -134,8 +134,8 @@ public class CrudFormats {
         return persons;
     }
     public static void updatePerson(Integer id, String firstName, String lastName, Integer age, String city, PersonsData personStorage) {
-        List<Person> personList = personStorage.getPersons();
-        for (Person person : personList) {
+        List<Peoples> personList = personStorage.getPersons();
+        for (Peoples person : personList) {
             if (person.getId().equals(id)) {
                 person.setFirstName(firstName);
                 person.setLastName(lastName);
@@ -145,7 +145,7 @@ public class CrudFormats {
         }
     }
     public static void deleteById(Integer id, PersonsData personStorage) {
-        List<Person> personList = personStorage.getPersons();
+        List<Peoples> personList = personStorage.getPersons();
         personList.removeIf(person -> person.getId().equals(id));
     }
 }

@@ -1,6 +1,6 @@
 package com.github.view;
 
-import com.github.persons.Person;
+import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
 import java.util.List;
 
@@ -8,12 +8,12 @@ public class Scanner {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
-    public static Person createPerson(PersonsData personStorage,
-                                      String firstNameScan,
-                                      String lastNameScan,
-                                      Integer ageScan, String cityScan) {
+    public static Peoples createPerson(PersonsData personStorage,
+                                       String firstNameScan,
+                                       String lastNameScan,
+                                       Integer ageScan, String cityScan) {
         Integer id = 0;
-        List<Person> personList = personStorage.getPersons();
+        List<Peoples> personList = personStorage.getPersons();
         if (personList.isEmpty()) {
             id = 0;
         } else {
@@ -27,6 +27,6 @@ public class Scanner {
             id++;
         }
         System.out.println("Your id=" + id + ")");
-        return new Person(id, firstNameScan, lastNameScan, ageScan, cityScan);
+        return new Peoples(id, firstNameScan, lastNameScan, ageScan, cityScan);
     }
 }

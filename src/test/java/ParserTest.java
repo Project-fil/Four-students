@@ -1,5 +1,5 @@
 import com.github.view.CrudFormats;
-import com.github.persons.Person;
+import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,11 +10,11 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class ParserTest {
-    private List<Person> personList = new ArrayList<>();
+    private List<Peoples> personList = new ArrayList<>();
 
     @Before
     public void setUp() {
-        Person person = new Person(1, "lolo", "wow", 20, "Kyiv");
+        Peoples person = new Peoples(1, "lolo", "wow", 20, "Kyiv");
         personList.add(person);
     }
 
@@ -80,34 +80,34 @@ public class ParserTest {
     @Test
     public void getAllObjectsTest() {
 
-        List<Person> data = new ArrayList<>();
-        data.add(new Person(0, "1", "2", 3, "4"));
-        List<Person> actual = CrudFormats.getAllObjects("./fileTest/jsTest.json");
+        List<Peoples> data = new ArrayList<>();
+        data.add(new Peoples(0, "1", "2", 3, "4"));
+        List<Peoples> actual = CrudFormats.getAllObjects("./fileTest/jsTest.json");
         assertEquals(data, actual);
     }
 
     @Test
     public void updatePersonTest() {
 
-        List<Person> expected = new ArrayList<>();
-        expected.add(new Person(0, "1", "2", 3, "4"));
+        List<Peoples> expected = new ArrayList<>();
+        expected.add(new Peoples(0, "1", "2", 3, "4"));
         PersonsData personStorage = new PersonsData(expected);
         CrudFormats.updatePerson(0, "3", "3", 3, "3", personStorage);
 
-        List<Person> actual = new ArrayList<>();
-        actual.add(new Person(0, "3", "3", 3, "3"));
+        List<Peoples> actual = new ArrayList<>();
+        actual.add(new Peoples(0, "3", "3", 3, "3"));
         assertEquals(expected, actual);
     }
 
     @Test
     public void deleteByIdTest() {
 
-        List<Person> expected = new ArrayList<>();
-        expected.add(new Person(0, "1", "2", 3, "4"));
+        List<Peoples> expected = new ArrayList<>();
+        expected.add(new Peoples(0, "1", "2", 3, "4"));
         PersonsData personStorage = new PersonsData(expected);
         CrudFormats.deleteById(0, personStorage);
 
-        List<Person> actual = new ArrayList<>();
+        List<Peoples> actual = new ArrayList<>();
         assertEquals(personStorage.getPersons(), actual);
     }
 }
