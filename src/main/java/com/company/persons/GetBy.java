@@ -1,7 +1,5 @@
-package com.company.view;
+package com.company.persons;
 
-import com.company.persons.Person;
-import com.company.persons.PersonsData;
 import java.util.ArrayList;
 import java.util.List;
 
