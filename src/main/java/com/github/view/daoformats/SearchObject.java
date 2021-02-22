@@ -5,7 +5,7 @@ import com.github.persons.Peoples;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.github.view.formatsview.ResultFromFile.getResultFromFile;
+import static com.github.view.formatsview.CleanerFile.getResultFromFile;
 
 public class SearchObject {
     public static List<Peoples> getAllObjects(String file) {

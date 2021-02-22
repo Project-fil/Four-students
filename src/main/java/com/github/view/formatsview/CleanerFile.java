@@ -1,8 +1,6 @@
 package com.github.view.formatsview;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class CleanerFile {
@@ -27,5 +25,66 @@ public class CleanerFile {
             }
         }
         return sb.toString();
+    }
+    public static void writeFile(File file, boolean arg, String sb) {
+        try (FileWriter writer = new FileWriter(file, arg)) {
+            writer.write(sb);
+            writer.flush();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    public static String getResultFromFile(String file) {
+        String results = "";
+        if (file.endsWith(".json")) {
+            results = readFile(file).replace("[", "")
+                    .replace("{", "")
+                    .replace("\"", "")
+                    .replace(",", "")
+                    .replace("}", "")
+                    .replace("id:", "")
+                    .replace("firstName:", "")
+                    .replace("lastName:", "")
+                    .replace("age:", "")
+                    .replace("city:", "")
+                    .replace("]", "").replace("  ",
+                            "").trim();
+        } else if (file.endsWith(".xml")) {
+            results = readFile(file).replace("<Persons>", "")
+                    .replace("</Persons>", "")
+                    .replace("<Person>", "")
+                    .replace("</Person>", "")
+                    .replace("<id>", "")
+                    .replace("</id>", "")
+                    .replace("<firstName>", "")
+                    .replace("</firstName>", "")
+                    .replace("<lastName>", "")
+                    .replace("</lastName>", "")
+                    .replace("<age>", "")
+                    .replace("</age>", "")
+                    .replace("<city>", "")
+                    .replace("</city>", "").replace("  ",
+                            "").trim();
+        } else if (file.endsWith(".csv")) {
+            results = readFile(file).replace("id,firstName,lastName,age,city",
+                    " ")
+                    .replace(",", " ").replace("  ",
+                            " ").trim();
+        } else if (file.endsWith(".yaml")) {
+            results = readFile(file).replace("-", "")
+                    .replace(" ", "\n")
+                    .replace("id", "")
+                    .replace("firstName", "")
+                    .replace("lastName", "")
+                    .replace("age", "")
+                    .replace("city", "")
+                    .replace("\"", "")
+                    .replace(",", " ")
+                    .replace(":", "")
+                    .replace("\n", " ")
+                    .replace("  ", " ")
+                    .trim();
+        }
+        return results;
     }
 }
