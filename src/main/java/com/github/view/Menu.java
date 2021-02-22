@@ -1,6 +1,6 @@
 package com.github.view;
 
-import com.github.view.formats.formatssss.*;
+import com.github.view.daoformats.formatssss.*;
 import com.github.view.formatsview.CleanerFile;
 import com.github.persons.PersonsData;
 import com.github.view.cruud.CrudDialog;

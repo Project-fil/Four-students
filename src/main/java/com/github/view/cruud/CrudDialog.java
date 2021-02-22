@@ -3,11 +3,11 @@ package com.github.view.cruud;
 import com.github.persons.GetBy;
 import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
-import com.github.view.formats.SearchObject;
-import com.github.view.formats.UpdatePerson;
-import com.github.view.formats.formatssss.*;
+import com.github.view.daoformats.SearchObject;
+import com.github.view.daoformats.UpdatePerson;
+import com.github.view.daoformats.formatssss.*;
 import com.github.view.formatsview.CleanerFile;
-import com.github.view.formats.SearchAndDeletePersonById;
+import com.github.view.daoformats.SearchAndDeletePersonById;
 import com.github.view.Scanner;
 
 import java.io.File;

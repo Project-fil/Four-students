@@ -1,4 +1,4 @@
-package com.github.view.formats.formatssss;
+package com.github.view.daoformats.formatssss;
 
 import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
