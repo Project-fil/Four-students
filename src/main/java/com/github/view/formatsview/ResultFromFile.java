@@ -7,7 +7,6 @@ public class ResultFromFile {
     public static String getResultFromFile(String file) {
         String results = "";
         if (file.endsWith(".json")) {
-
             results = readFile(file).replace("[", "")
                     .replace("{", "")
                     .replace("\"", "")
@@ -20,7 +19,6 @@ public class ResultFromFile {
                     .replace("city:", "")
                     .replace("]", "").replace("  ",
                             "").trim();
-
         } else if (file.endsWith(".xml")) {
             results = readFile(file).replace("<Persons>", "")
                     .replace("</Persons>", "")
