@@ -11,7 +11,6 @@ import com.github.view.Scanner;
 import com.github.view.formatsview.Filewrite;
 import java.io.File;
 import java.io.IOException;
-import static com.github.view.Menu.safeForFile;
 
 public class CrudDialog {
 
@@ -136,6 +135,20 @@ public class CrudDialog {
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        }
+    }
+    public static void safeForFile(String fileName) {
+        if (fileName.endsWith(".json")) {
+            Filewrite.writeFile(new File("js.json"), false, FormatJson.toJSON(personStorage));
+        } else if (fileName.endsWith(".xml")) {
+            Filewrite.writeFile(new File("xm.xml"), false, FormatXml.toXml(personStorage));
+        } else if (fileName.endsWith(".csv")) {
+            Filewrite.writeFile(new File("cv.csv"), false, FormasCsv.toCsv(personStorage));
+        } else if (fileName.endsWith(".yaml")) {
+            Filewrite.writeFile(new File("ya.yaml"), false, FormatYaml.toYaml(personStorage));
+        }
+        else if (fileName.endsWith(".bin")) {
+            Filewrite.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
         }
     }
 }

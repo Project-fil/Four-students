@@ -12,10 +12,10 @@ public class Scanner {
                                        String firstNameScan,
                                        String lastNameScan,
                                        Integer ageScan, String cityScan) {
-        Integer id = 0;
+        Integer id = 2;
         List<Peoples> personList = personStorage.getPersons();
         if (personList.isEmpty()) {
-            id = 0;
+            id = 2;
         } else {
             id = personList.stream().max((o1, o2) -> {
                 if (o1.getId() > o2.getId()) {
