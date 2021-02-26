@@ -1,0 +1,9 @@
+<Persons>
+ <Person>
+ <id>1</id>
+ <firstName>sdasasd</firstName>
+ <lastName>asdasd</lastName>
+ <age>23</age>
+ <city>asdas</city>
+ </Person>
+</Persons>
