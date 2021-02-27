@@ -1,6 +1,6 @@
 package com.github.view.cruud;
 
-import com.github.persons.GetBy;
+import com.github.persons.SearchID;
 import com.github.persons.Peoples;
 import com.github.persons.PersonsData;
 import com.github.view.daoformats.SearchObject;
@@ -99,7 +99,7 @@ public class CrudDialog {
                     System.out.println("Enter Id for update");
                     Integer id = scanner.nextInt();
                     personStorage = new PersonsData(SearchObject.getAllObjects(fileName));
-                    Peoples person = GetBy.getById(id, personStorage);
+                    Peoples person = SearchID.getByIdForUpdate(id, personStorage);
                     if (person == null) {
                         System.out.println("Person with this id doesn't exist");
                     } else {
