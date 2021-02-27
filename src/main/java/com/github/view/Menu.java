@@ -27,10 +27,11 @@ public class Menu {
                    String helpersChoose = scanner.next();
                    HelperMenu.helpersMethot(helpersChoose);
                 }  else{
+                      System.out.println("incorrect input. Try again! :)");
                     continue;
                 }
             } catch (Exception e) {
-                System.out.println("Error) data is written to file");
+                System.out.println("Error :) data is written to file");
                 System.out.println(e.getMessage());
                 safeForFile(menuChoise);
             }
