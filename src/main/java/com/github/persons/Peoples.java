@@ -64,13 +64,12 @@ public class Peoples implements Serializable {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Person{");
-        sb.append("firstname='").append(firstname).append('\'');
-        sb.append(", lastname='").append(lastname).append('\'');
-        sb.append(", age=").append(age);
-        sb.append(", city='").append(city).append('\'');
-        sb.append(", id=").append(id);
-        sb.append('}');
+        final StringBuffer sb = new StringBuffer("Person:\n");
+        sb.append(" [First name = ").append(firstname).append("]\n");
+        sb.append(" [Last name = ").append(lastname).append("]\n");
+        sb.append(" [Age = ").append(age).append("]\n");
+        sb.append(" [City = ").append(city).append("]\n");
+        sb.append(" [ID = ").append(id);
         return sb.toString();
-    }
+}
 }
