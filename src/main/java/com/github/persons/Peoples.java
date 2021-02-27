@@ -5,32 +5,32 @@ import java.util.Objects;
 
 public class Peoples implements Serializable {
 
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private Integer age;
     private String city;
     private Integer id;
     public Peoples(Integer id, String firstName, String lastName, Integer age, String city) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
         this.age = age;
         this.city = city;
     }
     public Integer getId() {
         return id;
     }
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
     public Integer getAge() {
         return age;
@@ -50,8 +50,8 @@ public class Peoples implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Peoples person = (Peoples) o;
-        return Objects.equals(firstName, person.firstName) &&
-                Objects.equals(lastName, person.lastName) &&
+        return Objects.equals(firstname, person.firstname) &&
+                Objects.equals(lastname, person.lastname) &&
                 Objects.equals(age, person.age) &&
                 Objects.equals(city, person.city) &&
                 Objects.equals(id, person.id);
@@ -59,14 +59,14 @@ public class Peoples implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, age, city, id);
+        return Objects.hash(firstname, lastname, age, city, id);
     }
 
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Person{");
-        sb.append("firstName='").append(firstName).append('\'');
-        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append("firstname='").append(firstname).append('\'');
+        sb.append(", lastname='").append(lastname).append('\'');
         sb.append(", age=").append(age);
         sb.append(", city='").append(city).append('\'');
         sb.append(", id=").append(id);

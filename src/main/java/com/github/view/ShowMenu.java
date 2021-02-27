@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class ShowMenu {
 
-    public static final String menuCrudHelpers = "Select action: \nEnter 1 for CRUD " +
-            "\nEnter 2 for HELPERS \n ";
+    public static final String menuCrudHelpers = "Select action: \nEnter 1 for CRUD menu " +
+            "\nEnter 2 for HELPERS menu \n ";
     public static final String menuCrud = "Select action: \nEnter 1 for Create " +
             "\nEnter 2 for ReadAll \nEnter 3 for Update " +
             "\nEnter 4 for Delete \n ";

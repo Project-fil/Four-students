@@ -1,13 +1,7 @@
 package com.github.view;
 
-import com.github.view.daoformats.formatssss.*;
-import com.github.view.formatsview.CleanerFile;
 import com.github.persons.PersonsData;
 import com.github.view.cruud.CrudDialog;
-import com.github.view.formatsview.Filewrite;
-
-import java.io.File;
-
 import static com.github.view.cruud.CrudDialog.safeForFile;
 
 public class Menu {
@@ -43,7 +37,6 @@ public class Menu {
         }
     }
 
-
     private static String getFileNameByTypeOfFile(String typeOfFile) {
         if (typeOfFile.equals("1")) {
             return "js.json";
@@ -58,5 +51,4 @@ public class Menu {
         }
         return "";
     }
-
 }

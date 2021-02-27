@@ -13,8 +13,8 @@ public class ResultFromFile {
                     .replace(",", "")
                     .replace("}", "")
                     .replace("id:", "")
-                    .replace("firstName:", "")
-                    .replace("lastName:", "")
+                    .replace("firstname:", "")
+                    .replace("lastname:", "")
                     .replace("age:", "")
                     .replace("city:", "")
                     .replace("]", "").replace("  ",
@@ -26,17 +26,17 @@ public class ResultFromFile {
                     .replace("</Person>", "")
                     .replace("<id>", "")
                     .replace("</id>", "")
-                    .replace("<firstName>", "")
-                    .replace("</firstName>", "")
-                    .replace("<lastName>", "")
-                    .replace("</lastName>", "")
+                    .replace("<firstname>", "")
+                    .replace("</firstname>", "")
+                    .replace("<lastname>", "")
+                    .replace("</lastname>", "")
                     .replace("<age>", "")
                     .replace("</age>", "")
                     .replace("<city>", "")
                     .replace("</city>", "").replace("  ",
                             "").trim();
         } else if (file.endsWith(".csv")) {
-            results = readFile(file).replace("id,firstName,lastName,age,city",
+            results = readFile(file).replace("id,firstname,lastname,age,city",
                     " ")
                     .replace(",", " ").replace("  ",
                             " ").trim();
@@ -44,8 +44,8 @@ public class ResultFromFile {
             results = readFile(file).replace("-", "")
                     .replace(" ", "\n")
                     .replace("id", "")
-                    .replace("firstName", "")
-                    .replace("lastName", "")
+                    .replace("firstname", "")
+                    .replace("lastname", "")
                     .replace("age", "")
                     .replace("city", "")
                     .replace("\"", "")
@@ -58,4 +58,3 @@ public class ResultFromFile {
         return results;
     }
 }
-

@@ -26,7 +26,7 @@ public class Scanner {
             }).get().getId();
             id++;
         }
-        System.out.println("Your id=" + id + ")");
+        System.out.println("Your id=" + id + "  :)");
         return new Peoples(id, firstNameScan, lastNameScan, ageScan, cityScan);
     }
 }

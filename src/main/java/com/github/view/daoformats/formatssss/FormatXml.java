@@ -19,8 +19,8 @@ public class FormatXml {
         ) {
             sb.append(" <Person>\n");
             sb.append(" <id>").append(person.getId()).append("</id>\n");
-            sb.append(" <firstName>").append(person.getFirstName()).append("</firstName>\n");
-            sb.append(" <lastName>").append(person.getLastName()).append("</lastName>\n");
+            sb.append(" <firstname>").append(person.getFirstname()).append("</firstname>\n");
+            sb.append(" <lastname>").append(person.getLastname()).append("</lastname>\n");
             sb.append(" <age>").append(person.getAge()).append("</age>\n");
             sb.append(" <city>").append(person.getCity()).append("</city>\n");
             sb.append(" </Person>\n");

@@ -20,8 +20,8 @@ public class FormatJson {
         {
             sb.append("{\n");
             sb.append(" \"id\":").append(person.getId()).append(",\n");
-            sb.append(" \"firstName\":\"").append(person.getFirstName()).append("\",\n");
-            sb.append(" \"lastName\":\"").append(person.getLastName()).append("\",\n");
+            sb.append(" \"firstname\":\"").append(person.getFirstname()).append("\",\n");
+            sb.append(" \"lastname\":\"").append(person.getLastname()).append("\",\n");
             sb.append(" \"age\":").append(person.getAge()).append(",\n");
             sb.append(" \"city\":\"").append(person.getCity()).append("\" \n");
             count++;

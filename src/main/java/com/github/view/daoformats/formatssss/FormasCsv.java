@@ -14,13 +14,13 @@ public class FormasCsv {
         if (personList.isEmpty()) {
             sb = new StringBuffer("");
         } else {
-            sb = new StringBuffer("id,firstName,lastName,age,city \n");
+            sb = new StringBuffer("id,firstname,lastname,age,city \n");
         }
         for (Peoples person : personList
         ) {
             sb.append(person.getId()).append(",")
-                    .append(person.getFirstName()).append(",")
-                    .append(person.getLastName()).append(",")
+                    .append(person.getFirstname()).append(",")
+                    .append(person.getLastname()).append(",")
                     .append(person.getAge()).append(",")
                     .append(person.getCity()).append(" \n");
         }

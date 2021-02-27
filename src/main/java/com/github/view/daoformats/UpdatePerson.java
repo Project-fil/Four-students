@@ -9,8 +9,8 @@ public class UpdatePerson {
         List<Peoples> personList = personStorage.getPersons();
         for (Peoples person : personList) {
             if (person.getId().equals(id)) {
-                person.setFirstName(firstName);
-                person.setLastName(lastName);
+                person.setFirstname(firstName);
+                person.setLastname(lastName);
                 person.setAge(age);
                 person.setCity(city);
             }

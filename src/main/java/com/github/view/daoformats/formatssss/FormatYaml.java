@@ -19,9 +19,9 @@ public class FormatYaml {
         ) {
             sb.append("- ")
                     .append("\"id:").append(person.getId())
-                    .append(", ").append("firstName:")
-                    .append(person.getFirstName()).append(",")
-                    .append("lastName:").append(person.getLastName())
+                    .append(", ").append("firstname:")
+                    .append(person.getFirstname()).append(",")
+                    .append("lastname:").append(person.getLastname())
                     .append(",").append("age:").append(person.getAge())
                     .append(",").append("city:").append(person.getCity())
                     .append("\" \n");

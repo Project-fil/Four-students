@@ -20,11 +20,11 @@ public class CrudDialog {
         try {
             switch (action) {
                 case "1": {
-                    System.out.print("Enter your firstName: ");
+                    System.out.print("Enter first name: ");
                     String firstNameScan = scanner.next();
-                    System.out.print("Enter your lastName: ");
+                    System.out.print("Enter last name: ");
                     String lastNameScan = scanner.next();
-                    System.out.print("Enter your age: ");
+                    System.out.print("Enter age: ");
                     while (!scanner.hasNextInt()) {
                         System.out.println("That not a number! Enter your age:");
                         scanner.next();
@@ -104,13 +104,13 @@ public class CrudDialog {
                         System.out.println("Person with this id doesn't exist");
                     } else {
                         System.out.println(person);
-                        System.out.print("Enter new firstName: ");
+                        System.out.print("Enter new firs name: ");
                         String firstNameScan = scanner.next();
-                        System.out.print("Enter new lastName: ");
+                        System.out.print("Enter new last name: ");
                         String lastNameScan = scanner.next();
                         System.out.print("Enter new age: ");
                         while (!scanner.hasNextInt()) {
-                            System.out.println("That not a number! Enter your age:");
+                            System.out.println("That not a number! Enter your age: ");
                             scanner.next();
                         }
                         Integer ageScan = scanner.nextInt();
