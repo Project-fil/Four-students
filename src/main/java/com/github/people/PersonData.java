@@ -1,18 +1,18 @@
-package com.github.persons;
+package com.github.people;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonsData {
+public class PersonData {
 
-    private List<Peoples> persons;
-    public PersonsData(List<Peoples> person) {
+    private List<People> persons;
+    public PersonData(List<People> person) {
         this.persons = new ArrayList<>(person);
     }
-    public List<Peoples> getPersons() {
+    public List<People> getPersons() {
         return persons;
     }
-    public void setPersons(List<Peoples> persons) {
+    public void setPersons(List<People> persons) {
         this.persons = persons;
     }
 

@@ -1,4 +1,4 @@
-package com.github.view;
+package com.github.menu;
 
 public class ShowMenu {
 

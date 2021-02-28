@@ -1,17 +1,17 @@
 package com.github.view.cruud;
 
-import com.github.persons.PersonsData;
+import com.github.people.PersonData;
 import com.github.view.daoformats.SearchAndDeletePersonById;
 import com.github.view.daoformats.SearchObject;
 import com.github.view.daoformats.formatssss.*;
-import com.github.view.formatsview.FileWrite;
+import com.github.view.util.FileWrite;
 
 import java.io.File;
 
 public class CrudDelete {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static PersonsData personStorage;
+    static PersonData personStorage;
 
     public static void CrudDelete(String fileName){
 
@@ -21,7 +21,7 @@ public class CrudDelete {
             scanner.next();
         }
         Integer id = scanner.nextInt();
-        personStorage = new PersonsData(SearchObject.getAllObjects(fileName));
+        personStorage = new PersonData(SearchObject.getAllObjects(fileName));
         SearchAndDeletePersonById.deleteById(id, personStorage);
         safeForFile(fileName);
         System.out.println("Id deleted ");
@@ -40,4 +40,5 @@ public class CrudDelete {
             FileWrite.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
         }
     }
+
 }

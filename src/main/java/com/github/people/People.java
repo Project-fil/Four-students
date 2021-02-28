@@ -1,16 +1,16 @@
-package com.github.persons;
+package com.github.people;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Peoples implements Serializable {
+public class People implements Serializable {
 
     private String firstname;
     private String lastname;
     private Integer age;
     private String city;
     private Integer id;
-    public Peoples(Integer id, String firstName, String lastName, Integer age, String city) {
+    public People(Integer id, String firstName, String lastName, Integer age, String city) {
         this.id = id;
         this.firstname = firstName;
         this.lastname = lastName;
@@ -49,7 +49,7 @@ public class Peoples implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Peoples person = (Peoples) o;
+        People person = (People) o;
         return Objects.equals(firstname, person.firstname) &&
                 Objects.equals(lastname, person.lastname) &&
                 Objects.equals(age, person.age) &&
@@ -70,7 +70,6 @@ public class Peoples implements Serializable {
         sb.append(" [Age = ").append(age).append("]\n");
         sb.append(" [City = ").append(city).append("]\n");
         sb.append(" [ID = ").append(id);
-        System.out.println("");
         return sb.toString();
     }
 }

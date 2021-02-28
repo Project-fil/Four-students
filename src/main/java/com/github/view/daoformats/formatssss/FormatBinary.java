@@ -1,16 +1,15 @@
 package com.github.view.daoformats.formatssss;
 
-import com.github.persons.Peoples;
-import com.github.persons.PersonsData;
+import com.github.people.People;
+import com.github.people.PersonData;
 
 import java.io.*;
-import java.util.Arrays;
 import java.util.List;
 
 public class FormatBinary {
 
-    public static String toBinary(PersonsData personStorage) {
-        List<Peoples> personList = personStorage.getPersons();
+    public static String toBinary(PersonData personStorage) {
+        List<People> personList = personStorage.getPersons();
         File file = new File("binary.bin");
         StringBuffer sb = null;
         try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(file))) {

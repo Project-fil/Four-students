@@ -1,6 +1,6 @@
-package com.github.view.formatsview;
+package com.github.view.util;
 
-import static com.github.view.Menu.showMenu;
+import static com.github.menu.Menu.showMenu;
 
 public class Switch {
 

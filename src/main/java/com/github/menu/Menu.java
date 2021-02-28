@@ -1,15 +1,15 @@
-package com.github.view;
+package com.github.menu;
 
-import com.github.persons.PersonsData;
+import com.github.people.PersonData;
 import com.github.view.cruud.CrudDialog;
-import com.github.view.formatsview.CheckOnNull;
+import com.github.view.util.CheckOnNull;
 
 import static com.github.view.cruud.CrudDelete.safeForFile;
 
 public class Menu {
 
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static PersonsData personStorage;
+    static PersonData personStorage;
 
     public static void showMenu() {
         boolean flagfor = true;

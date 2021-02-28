@@ -1,6 +1,6 @@
 package com.github.view.cruud;
 
-import com.github.persons.PersonsData;
+import com.github.people.PersonData;
 import com.github.view.daoformats.SearchObject;
 
 import java.io.File;
@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class FileOperations {
 
-    public static PersonsData createFileByFormat(String extension) {
+    public static PersonData createFileByFormat(String extension) {
 
             if (!new File(extension).isFile()) {
                 File f = new File(extension);
@@ -21,6 +21,6 @@ public class FileOperations {
                     e.printStackTrace();
                 }
             }
-                return new PersonsData(SearchObject.getAllObjects(extension));
+                return new PersonData(SearchObject.getAllObjects(extension));
     }
 }

@@ -1,14 +1,14 @@
 package com.github.view.daoformats.formatssss;
 
-import com.github.persons.Peoples;
-import com.github.persons.PersonsData;
+import com.github.people.People;
+import com.github.people.PersonData;
 import java.io.File;
 import java.util.List;
 
 public class FormasCsv {
 
-    public static String toCsv(PersonsData personStorage) {
-        List<Peoples> personList = personStorage.getPersons();
+    public static String toCsv(PersonData personStorage) {
+        List<People> personList = personStorage.getPersons();
         File file = new File("cv.csv");
         StringBuffer sb = null;
         if (personList.isEmpty()) {
@@ -16,7 +16,7 @@ public class FormasCsv {
         } else {
             sb = new StringBuffer("id,firstname,lastname,age,city \n");
         }
-        for (Peoples person : personList
+        for (People person : personList
         ) {
             sb.append(person.getId()).append(",")
                     .append(person.getFirstname()).append(",")

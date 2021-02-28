@@ -1,6 +1,6 @@
-package com.github.view.formatsview;
+package com.github.view.util;
 
-import static com.github.view.formatsview.CleanerFile.readFile;
+import static com.github.view.util.CleanerFile.readFile;
 
 public class ResultFromFile {
 

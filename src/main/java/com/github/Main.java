@@ -1,6 +1,6 @@
 package com.github;
 
-import com.github.view.Menu;
+import com.github.menu.Menu;
 
 public class Main {
 
@@ -8,6 +8,8 @@ public class Main {
         try { Menu.showMenu();
         } catch (Throwable t) {
             System.out.println("Restart Program");
+            System.out.println();
+            Menu.showMenu();
         }
     }
 }

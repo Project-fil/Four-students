@@ -1,4 +1,4 @@
-package com.github.view.formatsview;
+package com.github.view.util;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

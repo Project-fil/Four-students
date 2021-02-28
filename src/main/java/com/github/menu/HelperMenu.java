@@ -1,8 +1,6 @@
-package com.github.view;
+package com.github.menu;
 
-import com.github.persons.PersonsData;
-
-import static com.github.view.Menu.showMenu;
+import static com.github.menu.Menu.showMenu;
 
 public class HelperMenu {
 

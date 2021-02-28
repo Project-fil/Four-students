@@ -1,22 +1,20 @@
 package com.github.view.cruud;
 
-import com.github.persons.Peoples;
-import com.github.persons.PersonsData;
-import com.github.persons.SearchID;
+import com.github.people.People;
+import com.github.people.PersonData;
+import com.github.people.SearchID;
 import com.github.view.daoformats.SearchObject;
 import com.github.view.daoformats.UpdatePerson;
 import com.github.view.daoformats.formatssss.*;
-import com.github.view.formatsview.FileWrite;
-import com.github.view.formatsview.Switch;
+import com.github.view.util.FileWrite;
+import com.github.view.util.Switch;
 
 import java.io.File;
-
-import static com.github.view.cruud.CrudDelete.safeForFile;
 
 public class CrudUpdate {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static PersonsData personStorage;
+    static PersonData personStorage;
 
     public static void crudUpdate(String fileName) {
 
@@ -26,8 +24,8 @@ public class CrudUpdate {
             scanner.next();
         }
         Integer id = scanner.nextInt();
-        personStorage = new PersonsData(SearchObject.getAllObjects(fileName));
-        Peoples person = SearchID.getByIdForUpdate(id, personStorage);
+        personStorage = new PersonData(SearchObject.getAllObjects(fileName));
+        People person = SearchID.getByIdForUpdate(id, personStorage);
         if (person == null) {
             System.out.println("Person with this id doesn't exist");
         } else {
