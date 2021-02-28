@@ -70,6 +70,7 @@ public class Peoples implements Serializable {
         sb.append(" [Age = ").append(age).append("]\n");
         sb.append(" [City = ").append(city).append("]\n");
         sb.append(" [ID = ").append(id);
+        System.out.println("");
         return sb.toString();
-}
+    }
 }

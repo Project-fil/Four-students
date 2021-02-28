@@ -17,12 +17,12 @@ public class HelperMenu {
                         "If you select '2' in the main menu, you will be taken to the Helper\n" +
                         "When you select '1' in the Helper menu, you turn on the Help (you are now here), to go to the main menu, enter '2'\n" +
                         "From the Helper menu, you can Switch to the main menu by selecting switch (enter '2')\n" +
-                        "The program is turned off from the Helper menu to Exit the menu (enter '3') \n write '1' for close this menu ");
+                        "The program is turned off from the Helper menu to Exit the menu (enter '3') \n\n write '1' for close this menu ");
 
                 while (true) {
                     String scanClose = scanner.next();
                     if (scanClose.equals("1")) {
-                        showMenu();
+                     showMenu();
                     } else {
                         System.out.println("Unknown command. Try again!");
                         continue;

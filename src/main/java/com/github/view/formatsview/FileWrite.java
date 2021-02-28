@@ -3,7 +3,7 @@ package com.github.view.formatsview;
 import java.io.*;
 
 
-public class Filewrite {
+public class FileWrite {
 
     public static void writeFile(File file, boolean arg, String sb) {
         try (FileWriter writer = new FileWriter(file, arg)) {

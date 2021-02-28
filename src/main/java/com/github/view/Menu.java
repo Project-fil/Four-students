@@ -2,7 +2,9 @@ package com.github.view;
 
 import com.github.persons.PersonsData;
 import com.github.view.cruud.CrudDialog;
-import static com.github.view.cruud.CrudDialog.safeForFile;
+import com.github.view.formatsview.CheckOnNull;
+
+import static com.github.view.cruud.CrudDelete.safeForFile;
 
 public class Menu {
 
@@ -14,20 +16,25 @@ public class Menu {
         while (flagfor) {
             System.out.println(ShowMenu.menuCrudHelpers);
             String menuChoise = scanner.next();
+            CheckOnNull.checkOnNull(menuChoise);
             try {
                 if (menuChoise.equals("1")) {
                     System.out.println(ShowMenu.fileType);
-                    String fileTypes = scanner.next();
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("That not a number! Enter number: ");
+                        scanner.next();
+                    }
+                    String typeOfFile = scanner.next();
+                    getFileNameByTypeOfFile(typeOfFile);
                     System.out.println(ShowMenu.menuCrud);
                     String crudChoose = scanner.next();
-                    CrudDialog.crudMenu(crudChoose, getFileNameByTypeOfFile(fileTypes));
+                    CrudDialog.crudMenu(crudChoose, getFileNameByTypeOfFile(typeOfFile));
                 }
-                  if (menuChoise.equals("2")) {
-                   System.out.println(ShowMenu.menuHelpers);
-                   String helpersChoose = scanner.next();
-                   HelperMenu.helpersMethot(helpersChoose);
-                }  else{
-                      System.out.println("incorrect input. Try again! :)");
+                if (menuChoise.equals("2")) {
+                    System.out.println(ShowMenu.menuHelpers);
+                    String helpersChoose = scanner.next();
+                    HelperMenu.helpersMethot(helpersChoose);
+                } else {
                     continue;
                 }
             } catch (Exception e) {
@@ -39,6 +46,7 @@ public class Menu {
     }
 
     private static String getFileNameByTypeOfFile(String typeOfFile) {
+
         if (typeOfFile.equals("1")) {
             return "js.json";
         } else if (typeOfFile.equals("2")) {
@@ -49,6 +57,8 @@ public class Menu {
             return "ya.yaml";
         } else if (typeOfFile.equals("5")) {
             return "binary.bin";
+        } else if (typeOfFile.equals("6")) {
+            showMenu();
         }
         return "";
     }
