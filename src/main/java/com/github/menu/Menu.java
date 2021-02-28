@@ -59,6 +59,9 @@ public class Menu {
             return "binary.bin";
         } else if (typeOfFile.equals("6")) {
             showMenu();
+        } else {
+            showMenu();
+            System.out.println("Error enter. Try again: ");
         }
         return "";
     }
