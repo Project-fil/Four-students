@@ -20,8 +20,8 @@ public class ResultFromFile {
                     .replace("]", "").replace("  ",
                             "").trim();
         } else if (file.endsWith(".xml")) {
-            results = readFile(file).replace("<Persons>", "")
-                    .replace("</Persons>", "")
+            results = readFile(file).replace("<People>", "")
+                    .replace("</People>", "")
                     .replace("<Person>", "")
                     .replace("</Person>", "")
                     .replace("<id>", "")

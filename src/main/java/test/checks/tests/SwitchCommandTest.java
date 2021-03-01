@@ -1,9 +1,8 @@
 package test.checks.tests;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 class SwitchCommandTest {
     @Test
@@ -11,6 +10,5 @@ class SwitchCommandTest {
         String exp = "switch";
         assertEquals(exp, line);
 
-        assertNotNull(line);
     }
 }

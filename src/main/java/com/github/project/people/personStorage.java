@@ -5,21 +5,21 @@ import java.util.List;
 
 public class personStorage {
 
-    private List<People> persons;
+    private List<People> people;
     public personStorage(List<People> person) {
-        this.persons = new ArrayList<>(person);
+        this.people = new ArrayList<>(person);
     }
     public List<People> getPerson() {
-        return persons;
+        return people;
     }
     public void setPerson(List<People> persons) {
-        this.persons = persons;
+        this.people = persons;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("PersonStorage{");
-        sb.append("persons=").append(persons);
+        sb.append("people=").append(people);
         sb.append('}');
         return sb.toString();
     }
