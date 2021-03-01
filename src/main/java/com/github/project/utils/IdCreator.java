@@ -1,7 +1,7 @@
 package com.github.project.utils;
 
 import com.github.project.people.People;
-import com.github.project.people.PersonData;
+import com.github.project.people.personStorage;
 
 import java.util.List;
 
@@ -9,12 +9,12 @@ public class IdCreator {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
-    public static People createPerson(PersonData personStorage,
-                                       String firstNameScan,
-                                       String lastNameScan,
-                                       Integer ageScan, String cityScan) {
+    public static People createPerson(personStorage personStorage,
+                                      String firstNameScan,
+                                      String lastNameScan,
+                                      Integer ageScan, String cityScan) {
         Integer id = 2;
-        List<People> personList = personStorage.getPersons();
+        List<People> personList = personStorage.getPerson();
         if (personList.isEmpty()) {
             id = 2;
         } else {

@@ -8,7 +8,6 @@ public class SwitchCommand {
         if (line.equals("switch")) {
             System.out.println();
             showMenu();
-
         }
     }
 }

@@ -1,13 +1,13 @@
 package com.github.project.daoformats.formats;
 
 import com.github.project.people.People;
-import com.github.project.people.PersonData;
+import com.github.project.people.personStorage;
 import java.io.File;
 import java.util.List;
 
 public class FormatJson {
-    public static String toJSON(PersonData personStorage) {
-        List<People> personList = personStorage.getPersons();
+    public static String toJSON(personStorage personStorage) {
+        List<People> personList = personStorage.getPerson();
         File file = new File("js.json");
         StringBuffer sb = null;
         if (personList.isEmpty())

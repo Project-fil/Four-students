@@ -1,14 +1,13 @@
 package com.github.project.utils;
 
-import com.github.project.people.PersonData;
-import com.github.project.utils.SearchObject;
+import com.github.project.people.personStorage;
 
 import java.io.File;
 import java.io.IOException;
 
 public class FileChecksAndCreator {
 
-    public static PersonData createFileByFormat(String extension) {
+    public static personStorage createFileByFormat(String extension) {
 
             if (!new File(extension).isFile()) {
                 File f = new File(extension);
@@ -21,6 +20,6 @@ public class FileChecksAndCreator {
                     e.printStackTrace();
                 }
             }
-                return new PersonData(SearchObject.getAllObjects(extension));
+                return new personStorage(SearchObject.getAllObjects(extension));
     }
 }

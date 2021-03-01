@@ -1,14 +1,14 @@
 package com.github.project.daoformats.formats;
 
 import com.github.project.people.People;
-import com.github.project.people.PersonData;
+import com.github.project.people.personStorage;
 import java.io.File;
 import java.util.List;
 
 public class FormatCsv {
 
-    public static String toCsv(PersonData personStorage) {
-        List<People> personList = personStorage.getPersons();
+    public static String toCsv(personStorage personStorage) {
+        List<People> personList = personStorage.getPerson();
         File file = new File("cv.csv");
         StringBuffer sb = null;
         if (personList.isEmpty()) {

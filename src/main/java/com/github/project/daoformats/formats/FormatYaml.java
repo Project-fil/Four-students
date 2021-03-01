@@ -1,13 +1,13 @@
 package com.github.project.daoformats.formats;
 
 import com.github.project.people.People;
-import com.github.project.people.PersonData;
+import com.github.project.people.personStorage;
 import java.io.File;
 import java.util.List;
 
 public class FormatYaml {
-    public static String toYaml(PersonData personStorage) {
-        List<People> personList = personStorage.getPersons();
+    public static String toYaml(personStorage personStorage) {
+        List<People> personList = personStorage.getPerson();
         File file = new File("ya.yaml");
         StringBuffer sb = null;
         if (personList.isEmpty()) {

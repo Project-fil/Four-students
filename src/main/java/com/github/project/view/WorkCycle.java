@@ -3,7 +3,7 @@ package com.github.project.view;
 import com.github.project.dao.DaoDelete;
 import com.github.project.dao.DaoFormats;
 import com.github.project.dao.DaoUpdateThePerson;
-import com.github.project.people.PersonData;
+import com.github.project.people.personStorage;
 import com.github.project.utils.SearchObject;
 
 import static com.github.project.dao.DaoMenu.showMenu;
@@ -17,7 +17,7 @@ public class WorkCycle {
                 break;
             }
             case "2": {
-                System.out.println(new PersonData(SearchObject.getAllObjects(fileName)).getPersons());
+                System.out.println(new personStorage(SearchObject.getAllObjects(fileName)).getPerson());
                 System.out.println();
                 break;
             }

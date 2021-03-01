@@ -1,7 +1,7 @@
 package com.github.project.dao;
 
 import com.github.project.people.People;
-import com.github.project.people.PersonData;
+import com.github.project.people.personStorage;
 import com.github.project.checks.IdChecks;
 import com.github.project.utils.SearchObject;
 import com.github.project.daoformats.UpdatePerson;
@@ -13,7 +13,7 @@ import java.io.File;
 public class DaoUpdateThePerson {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static PersonData personStorage;
+    static com.github.project.people.personStorage personStorage;
 
     public static void crudUpdate(String fileName) {
 
@@ -23,7 +23,7 @@ public class DaoUpdateThePerson {
             scanner.next();
         }
         Integer id = scanner.nextInt();
-        personStorage = new PersonData(SearchObject.getAllObjects(fileName));
+        personStorage = new personStorage(SearchObject.getAllObjects(fileName));
         People person = IdChecks.getByIdForUpdate(id, personStorage);
         if (person == null) {
             System.out.println("Person with this id doesn't exist");
@@ -60,7 +60,7 @@ public class DaoUpdateThePerson {
         } else if (fileName.endsWith(".yaml")) {
             WriteFileMethod.writeFile(new File("ya.yaml"), false, FormatYaml.toYaml(personStorage));
         } else if (fileName.endsWith(".bin")) {
-            WriteFileMethod.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
+            WriteFileMethod.writeFile(new File("binary.bin"), false, FormatBinary.toBinaryFile(personStorage));
         }
     }
 }

@@ -1,7 +1,5 @@
 package com.github.project.dao;
 
-import com.github.project.people.PersonData;
-
 import com.github.project.daoformats.formats.*;
 import com.github.project.view.WriteFileMethod;
 import com.github.project.checks.SwitchCommand;
@@ -13,7 +11,7 @@ import java.io.File;
 public class DaoFormats {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static PersonData personStorage;
+    static com.github.project.people.personStorage personStorage;
 
     public static void crudFormats(String fileName){
         System.out.print("Enter first name: ");
@@ -33,20 +31,20 @@ public class DaoFormats {
         SwitchCommand.switchToMenuCheck(cityScan);
         personStorage = FileChecksAndCreator.createFileByFormat(fileName);
         if (fileName.endsWith(".json")) {
-            personStorage.getPersons().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPerson().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             WriteFileMethod.writeFile(new File("js.json"), false, FormatJson.toJSON(personStorage));
         } else if (fileName.endsWith(".xml")) {
-            personStorage.getPersons().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPerson().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             WriteFileMethod.writeFile(new File("xm.xml"), false, FormatXml.toXml(personStorage));
         } else if (fileName.endsWith(".csv")) {
-            personStorage.getPersons().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPerson().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             WriteFileMethod.writeFile(new File("cv.csv"), false, FormatCsv.toCsv(personStorage));
         } else if (fileName.endsWith(".yaml")) {
-            personStorage.getPersons().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPerson().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             WriteFileMethod.writeFile(new File("ya.yaml"), false, FormatYaml.toYaml(personStorage));
         } else if (fileName.endsWith(".bin")) {
-            personStorage.getPersons().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
-            WriteFileMethod.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
+            personStorage.getPerson().add(IdCreator.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            WriteFileMethod.writeFile(new File("binary.bin"), false, FormatBinary.toBinaryFile(personStorage));
         }
     }
 }

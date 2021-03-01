@@ -1,6 +1,6 @@
 package com.github.project.dao;
 
-import com.github.project.people.PersonData;
+import com.github.project.people.personStorage;
 import com.github.project.utils.SearchAndDeletePersonById;
 import com.github.project.utils.SearchObject;
 import com.github.project.daoformats.formats.*;
@@ -11,9 +11,9 @@ import java.io.File;
 public class DaoDelete {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static PersonData personStorage;
+    static com.github.project.people.personStorage personStorage;
 
-    public static void CrudDelete(String fileName){
+    public static void CrudDelete(String fileName) {
 
         System.out.println("Enter Id for delete");
         while (!scanner.hasNextInt()) {
@@ -21,12 +21,13 @@ public class DaoDelete {
             scanner.next();
         }
         Integer id = scanner.nextInt();
-        personStorage = new PersonData(SearchObject.getAllObjects(fileName));
+        personStorage = new personStorage(SearchObject.getAllObjects(fileName));
         SearchAndDeletePersonById.deleteById(id, personStorage);
         safeForFile(fileName);
         System.out.println("Id deleted ");
         System.out.println();
     }
+
     public static void safeForFile(String fileName) {
         if (fileName.endsWith(".json")) {
             WriteFileMethod.writeFile(new File("js.json"), false, FormatJson.toJSON(personStorage));
@@ -37,7 +38,7 @@ public class DaoDelete {
         } else if (fileName.endsWith(".yaml")) {
             WriteFileMethod.writeFile(new File("ya.yaml"), false, FormatYaml.toYaml(personStorage));
         } else if (fileName.endsWith(".bin")) {
-            WriteFileMethod.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
+            WriteFileMethod.writeFile(new File("binary.bin"), false, FormatBinary.toBinaryFile(personStorage));
         }
     }
 }

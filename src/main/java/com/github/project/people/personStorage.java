@@ -3,16 +3,16 @@ package com.github.project.people;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonData {
+public class personStorage {
 
     private List<People> persons;
-    public PersonData(List<People> person) {
+    public personStorage(List<People> person) {
         this.persons = new ArrayList<>(person);
     }
-    public List<People> getPersons() {
+    public List<People> getPerson() {
         return persons;
     }
-    public void setPersons(List<People> persons) {
+    public void setPerson(List<People> persons) {
         this.persons = persons;
     }
 
