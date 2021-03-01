@@ -40,5 +40,4 @@ public class CrudDelete {
             FileWrite.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
         }
     }
-
 }

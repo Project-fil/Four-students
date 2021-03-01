@@ -16,8 +16,7 @@ public class FormasCsv {
         } else {
             sb = new StringBuffer("id,firstname,lastname,age,city \n");
         }
-        for (People person : personList
-        ) {
+        for (People person : personList) {
             sb.append(person.getId()).append(",")
                     .append(person.getFirstname()).append(",")
                     .append(person.getLastname()).append(",")

@@ -8,13 +8,11 @@ import static com.github.menu.Menu.showMenu;
 public class CrudDialog {
 
     private static java.util.Scanner scanner = new java.util.Scanner(System.in);
-    static PersonData personStorage;
 
     public static void crudMenu(String action, String fileName) {
         switch (action) {
             case "1": {
                CrudFormats.crudFormats(fileName);
-               System.out.println("File created ");
                 break;
             }
             case "2": {

@@ -1,5 +1,7 @@
 package com.github.menu;
 
+import com.github.people.PersonData;
+
 import static com.github.menu.Menu.showMenu;
 
 public class HelperMenu {

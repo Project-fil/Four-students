@@ -4,6 +4,7 @@ import com.github.people.People;
 import com.github.people.PersonData;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.List;
 
 public class FormatBinary {

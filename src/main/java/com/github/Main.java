@@ -8,8 +8,6 @@ public class Main {
         try { Menu.showMenu();
         } catch (Throwable t) {
             System.out.println("Restart Program");
-            System.out.println();
-            Menu.showMenu();
         }
     }
 }

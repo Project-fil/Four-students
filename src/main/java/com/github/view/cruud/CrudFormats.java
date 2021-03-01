@@ -1,8 +1,10 @@
 package com.github.view.cruud;
 
 import com.github.people.PersonData;
-import com.github.view.util.NumberId;
+import com.github.view.cruud.CrudId;
+
 import com.github.view.daoformats.formatssss.*;
+import com.github.view.util.CheckOnNull;
 import com.github.view.util.FileWrite;
 import com.github.view.util.Switch;
 
@@ -33,19 +35,19 @@ public class CrudFormats {
         Switch.switchToMenuCheck(cityScan);
         personStorage = FileOperations.createFileByFormat(fileName);
         if (fileName.endsWith(".json")) {
-            personStorage.getPersons().add(NumberId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPersons().add(CrudId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             FileWrite.writeFile(new File("js.json"), false, FormatJson.toJSON(personStorage));
         } else if (fileName.endsWith(".xml")) {
-            personStorage.getPersons().add(NumberId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPersons().add(CrudId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             FileWrite.writeFile(new File("xm.xml"), false, FormatXml.toXml(personStorage));
         } else if (fileName.endsWith(".csv")) {
-            personStorage.getPersons().add(NumberId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPersons().add(CrudId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             FileWrite.writeFile(new File("cv.csv"), false, FormasCsv.toCsv(personStorage));
         } else if (fileName.endsWith(".yaml")) {
-            personStorage.getPersons().add(NumberId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPersons().add(CrudId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             FileWrite.writeFile(new File("ya.yaml"), false, FormatYaml.toYaml(personStorage));
         } else if (fileName.endsWith(".bin")) {
-            personStorage.getPersons().add(NumberId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
+            personStorage.getPersons().add(CrudId.createPerson(personStorage, firstNameScan, lastNameScan, ageScan, cityScan));
             FileWrite.writeFile(new File("binary.bin"), false, FormatBinary.toBinary(personStorage));
         }
     }

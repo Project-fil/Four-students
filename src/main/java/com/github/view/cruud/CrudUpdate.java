@@ -8,7 +8,6 @@ import com.github.view.daoformats.UpdatePerson;
 import com.github.view.daoformats.formatssss.*;
 import com.github.view.util.FileWrite;
 import com.github.view.util.Switch;
-
 import java.io.File;
 
 public class CrudUpdate {

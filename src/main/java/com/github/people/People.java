@@ -65,11 +65,13 @@ public class People implements Serializable {
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Person:\n");
+        sb.append("\n");
         sb.append(" [First name = ").append(firstname).append("]\n");
         sb.append(" [Last name = ").append(lastname).append("]\n");
         sb.append(" [Age = ").append(age).append("]\n");
         sb.append(" [City = ").append(city).append("]\n");
         sb.append(" [ID = ").append(id);
+        System.out.println("");
         return sb.toString();
     }
 }
