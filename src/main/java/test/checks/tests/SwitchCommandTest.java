@@ -1,6 +1,5 @@
-package com.github.project.checks.tests;
+package test.checks.tests;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

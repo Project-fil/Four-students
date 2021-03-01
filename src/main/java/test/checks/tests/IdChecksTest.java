@@ -1,4 +1,4 @@
-package com.github.project.checks;
+package test.checks.tests;
 
 import com.github.project.people.personStorage;
 import org.junit.Test;

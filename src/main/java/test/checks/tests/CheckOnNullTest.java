@@ -1,4 +1,4 @@
-package com.github.project.checks.tests;
+package test.checks.tests;
 
 import org.junit.Test;
 

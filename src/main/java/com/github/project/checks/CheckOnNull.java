@@ -1,6 +1,5 @@
 package com.github.project.checks;
 
-
 import static com.github.project.dao.DaoMenu.showMenu;
 
 public class CheckOnNull {
